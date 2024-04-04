@@ -1,0 +1,83 @@
+$xs: 320px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1600px;
+
+// ant breakpoint
+/*
+  xs: 0 -> 575
+  sm: 576 -> 767
+  md: 768 -> 991
+  lg: 992 -> 1199
+  xl: 1200 -> 1599
+  xxl: 1600 -> ...
+*/
+
+@mixin from0_575 {
+  @media (max-width: #{$sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin from576_ {
+  @media (min-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin from768_ {
+  @media (min-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin from992_ {
+  @media (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin from1200_ {
+  @media (min-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin from1440_ {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+/* ================ */
+
+@mixin smallDesktopOnBoard {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin menuDashboard_1370 {
+  @media (max-width: 1370px) {
+    @content;
+  }
+}
+
+@mixin menuDashboard_1024 {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin menuCustomer_1510 {
+  @media (max-width: 1510px) {
+    @content;
+  }
+}
+
+@mixin menuCustomer_1120 {
+  @media (max-width: 1120px) {
+    @content;
+  }
+}

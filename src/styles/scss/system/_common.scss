@@ -1,0 +1,293 @@
+@use "sass:math";
+
+// margin classes
+// vd. mt_1-5, mt-auto
+$margin-directions: m, mt, mr, mb, ml;
+@each $direction in $margin-directions {
+  @for $space from 0 through 10 {
+    .#{$direction}_#{$space} {
+      @if $direction == m {
+        margin: $space + rem;
+      }
+      @if $direction == mt {
+        margin-top: $space + rem;
+      }
+      @if $direction == mr {
+        margin-right: $space + rem;
+      }
+      @if $direction == mb {
+        margin-bottom: $space + rem;
+      }
+      @if $direction == ml {
+        margin-left: $space + rem;
+      }
+    }
+    .#{$direction}-auto {
+      @if $direction == mt {
+        margin-top: auto;
+      }
+      @if $direction == mr {
+        margin-right: auto;
+      }
+      @if $direction == mb {
+        margin-bottom: auto;
+      }
+      @if $direction == ml {
+        margin-left: auto;
+      }
+    }
+    @for $sub-space from 1 through 9 {
+      .#{$direction}_#{$space}-#{$sub-space} {
+        @if $direction == mt {
+          margin-top: $space + $sub-space * 0.1 + rem;
+        }
+        @if $direction == mr {
+          margin-right: $space + $sub-space * 0.1 + rem;
+        }
+        @if $direction == mb {
+          margin-bottom: $space + $sub-space * 0.1 + rem;
+        }
+        @if $direction == ml {
+          margin-left: $space + $sub-space * 0.1 + rem;
+        }
+      }
+    }
+  }
+}
+
+// padding classes
+// vd. pt_1-5
+$padding-directions: p, pt, pr, pb, pl;
+@each $direction in $padding-directions {
+  @for $space from 0 through 10 {
+    .#{$direction}_#{$space} {
+      @if $direction == p {
+        padding: $space + rem;
+      }
+      @if $direction == pt {
+        padding-top: $space + rem;
+      }
+      @if $direction == pr {
+        padding-right: $space + rem;
+      }
+      @if $direction == pb {
+        padding-bottom: $space + rem;
+      }
+      @if $direction == pl {
+        padding-left: $space + rem;
+      }
+    }
+    @for $sub-space from 1 through 9 {
+      .#{$direction}_#{$space}-#{$sub-space} {
+        @if $direction == pt {
+          padding-top: $space + $sub-space * 0.1 + rem;
+        }
+        @if $direction == pr {
+          padding-right: $space + $sub-space * 0.1 + rem;
+        }
+        @if $direction == pb {
+          padding-bottom: $space + $sub-space * 0.1 + rem;
+        }
+        @if $direction == pl {
+          padding-left: $space + $sub-space * 0.1 + rem;
+        }
+      }
+    }
+  }
+}
+
+// width percentage. vd: w_20 <=> width: 20%
+@for $width from 0 through 100 {
+  .w_#{$width} {
+    // width: math.round(percentage($width/100));
+    width: math.percentage(math.div($width, 100));
+  }
+}
+
+// gap. vd: gap_2 <=> gap: 2
+@for $value from 0 through 10 {
+  .gap_#{$value} {
+    gap: $value + rem;
+  }
+}
+
+// width rem. vd: wr_20 <=> width: 20rem
+@for $width from 0 through 100 {
+  .wr_#{$width} {
+    width: $width + rem;
+  }
+}
+
+// width flex percentage. vd: wf_20 <==> flex: 0 0 20%;
+@for $width from 0 through 100 {
+  .wf_#{$width} {
+    flex: 0 0 math.percentage(math.div($width, 100));
+  }
+}
+
+// font size
+@for $space from 0 through 10 {
+  .f_#{$space} {
+    font-size: $space + rem !important;
+  }
+  @for $sub-space from 1 through 9 {
+    .f_#{$space}-#{$sub-space} {
+      font-size: $space + $sub-space * 0.1 + rem !important;
+    }
+  }
+}
+
+/* ===============FLEXBOX============= */
+.d-flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+/* ===============GRID============= */
+.grid {
+  display: grid;
+}
+
+.text {
+  &-right {
+    text-align: right;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-capitalize {
+    text-transform: capitalize;
+  }
+}
+
+
+
+/* dùng cho những text require (vd: name *) */
+.asterisk {
+  &::after {
+    color: red;
+    content: "*";
+    margin-left: 0.4rem;
+  }
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}
+
+.word-break {
+  word-break: break-word;
+}
+
+// dùng cho title dài 1 hay nhiều dòng
+// phần text không hiển thị hết sẽ thành dấu 3 chấm ...
+@for $space from 1 through 5 {
+  .text-overflow-#{$space}-lines {
+    word-break: break-word;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: $space;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.truncate {
+  display: block;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.il-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.mb-hidden {
+  @media (max-width: 600px) {
+    display: none;
+  }
+}

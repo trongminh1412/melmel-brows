@@ -1,0 +1,40 @@
+.logoFooter{
+  img{
+    width: auto;
+  }
+}
+
+.icon{
+  img{
+    // width: 20px;
+  }
+}
+
+.titleFooter{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.016em;
+  text-align: left;
+  color: #66491C;
+}
+
+.subtitleFooter{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24.32px;
+  text-align: left;
+  color: #453113;
+  margin-bottom: 1rem ;
+}
+.button{
+  button{      
+      padding: 10px;
+      gap: 18px;
+      border-radius: 8px;
+      opacity: 0px;   
+      border: 1px solid transparent;
+      background-color: #ffffff;
+    }
+  
+}
