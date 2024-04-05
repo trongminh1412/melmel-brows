@@ -1,5 +1,5 @@
 import { Tabs } from "antd";
-import { useState } from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,117 +10,155 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 // import required modules
-import checkbox from "@/public/assets/images/icon/Checkbox.png";
 import slide1 from "@/public/assets/images/page1/slider1.png";
-import slide2 from "@/public/assets/images/page1/slider2.png";
-import slide3 from "@/public/assets/images/page1/slider3.png";
-import slide4 from "@/public/assets/images/page1/slider4.png";
+import { motion } from "framer-motion";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-const TabComponent = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>();
+import TitleComponent from "../SectionPage1/Title/Title";
+import flowerIcon from '@/public/assets/images/body/flower_icon.svg';
 
+type Props={
+  data:{
+    label:string,
+      price?:string,
+      content:{
+        title:string,
+        list:{label:string}[],
+      }
+  }[]
+}
+const TabComponent = (props:Props) => {
+  // const [thumbsSwiper, setThumbsSwiper] = useState<any>();
+  const [key, setKey] = useState("0")
+  
   return (
     <div className="section rounded-xl">
-      <div className="">
-        <Tabs defaultActiveKey="1" animated={true}>
-          <Tabs.TabPane tab="Sợi Melstrokes" key="1" className=" bg-brown-500 p-8" >
-            <div className="flex justify-between gap-12">
-                <div className="w-[45%]">
-                <Swiper
+      <div className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem]">
+      <TitleComponent title2="Bạn Được Học Những Gì?"/>
+        <Tabs 
+            tabBarStyle={{color: "#94774A"}} 
+            defaultActiveKey={key} 
+            animated={true} 
+            onChange={(val) => {
+              console.log(43,val)
+              setKey(val)
+            }}>
+          {props.data.map((item,idx)=>{
+            return(
+              <Tabs.TabPane 
+                  tab={
+                    key === `${idx}` ?     
+                    <div className="text-24px text-brown-600 font-bold  bg-brown-500 py-[1.5rem] px-[2rem] rounded-[4px]  flex justify-center 1024px:text-18px w-full">
+                   {item.label}
+                    </div>:     
+                    <div className="text-24px text-dark-600 font-bold  bg-white py-[1.5rem] px-[2rem] rounded-[4px]  flex justify-center 1024px:text-18px w-full">
+                     {item.label}
+                    </div>          
+                  }
+                  key={idx}
+                  className=" bg-brown-500 p-8"
+            >
+              <div className="flex justify-between gap-12 475px:flex-col">
+                <motion.div className="w-[45%] 475px:w-full" initial="hide"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  exit="hide"
+                  variants={{
+                    hide: {
+                      opacity: 0,
+                      x: 300,
+                    },
+                    show: {
+                      opacity: 1,
+                      x: 0,
+                      transition: {
+                        duration: 0.8,
+                        bounce: 0.4,
+                      },
+                    },
+                  }} >
+                  <Swiper
                     loop={true}
                     spaceBetween={10}
-                    navigation={true}
-                    thumbs={{ swiper: thumbsSwiper }}
+                    navigation={false}
                     modules={[FreeMode, Navigation, Thumbs]}
                     className="mySwiper2"
                   >
                     <SwiperSlide>
-                      <Image src={slide1} alt="" />
+                      <div className="w-full">
+                        <Image src={slide1} alt="" className="w-full" />
+                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Image src={slide2} alt="" />
+                      <div className="w-full">
+                        <Image src={slide1} alt="" />
+                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Image src={slide3} alt="" />
+                      <div className="w-full">
+                        <Image src={slide1} alt="" />
+                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Image src={slide4} alt="" />
+                      <div className="w-full">
+                        <Image src={slide1} alt="" />
+                      </div>
                     </SwiperSlide>
                   </Swiper>
-
-
-                  <Swiper
-                    onSwiper={setThumbsSwiper}
-                    loop={true}
-                    spaceBetween={10}
-                    slidesPerView={4}
-                    freeMode={true}
-                    watchSlidesProgress={true}
-                    modules={[FreeMode, Navigation, Thumbs]}
-                    className="mySwiper"
-                  >
-                    <SwiperSlide>
-                      <Image src={slide1} alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Image src={slide2} alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Image src={slide3} alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Image src={slide4} alt="" />
-                    </SwiperSlide>
-                  </Swiper>
-
-                </div>
-                
-              <div className="w-[50%]">
-                <p className="text-16px text-dark-300 font-normal tracking-wide mb-2">PHUN MÀY</p>
-                <h2 className="text-7xl text-dark-100 font-bold mb-4">Sợi Melstrokes</h2>
-                <div>
-                  <p className="text-dark-100 text-20px mb-2">Dành cho vẻ đẹp tự nhiên </p>
-                  <p className="text-dark-100 text-20px mb-4">
-Kỹ thuật tạo sợi với cấu trúc mềm mại, uyển chuyển như lông mày tự nhiên. Giữ nét sợi và đẹp bền sau bong</p>
-        <p className="text-dark-100 text-20px font-medium">Lợi ích</p>
-        <div className="flex items-center gap-4 mb-4">
-          <Image src={checkbox} alt="" />
-          <p className="text-dark-100 text-18px font-normal ">Khắc phục chân mày thưa, nhạt, không rõ dáng, không cân đối</p>
-        </div>
-        <div className="flex items-center gap-4 mb-4">
-          <Image src={checkbox} alt="" />
-          <p className="text-dark-100 text-18px font-normal">Tạo sợi với cấu trúc mềm mại, uyển chuyển, tự nhiên</p>
-        </div>
-        <div className="flex items-center gap-4 mb-4">
-          <Image src={checkbox} alt="" />
-          <p className="text-dark-100 text-18px font-normal">Tạo dáng chân mày hài hòa, tôn lên đường nét khuôn mặt</p>
-        </div>
-        <p className="text-dark-100 text-20px font-medium">Ứng dụng</p>
-        <div className="flex items-center gap-4 mb-4">
-          <Image src={checkbox} alt="" />
-          <p className="text-dark-100 text-18px font-normal">Người có lông mày thưa, nhạt, không rõ dáng</p>
-        </div>
-        <div className="flex items-center gap-4 mb-4">
-          <Image src={checkbox} alt="" />
-          <p className="text-dark-100 text-18px font-normal">Nhiều loại da (trừ da sẹo lồi, da bị bào mòn do mỹ phẩm, lỗ chân lông to)</p>
-        </div>
-        <div className="flex items-center gap-4 mb-4">
-          <Image src={checkbox} alt="" />
-          <p className="text-dark-100 text-18px font-normal">Có thể tùy chỉnh nhiều kiểu dáng lông mày khác nhau</p>
-        </div>
-                </div>
+                </motion.div>
+  
+                <motion.div className="w-[50%] 475px:w-full " initial="hide"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  exit="hide"
+                  variants={{
+                    hide: {
+                      opacity: 0,
+                      x: -300,
+                    },
+                    show: {
+                      opacity: 1,
+                      x: 0,
+                      transition: {
+                        duration: 0.8,
+                        bounce: 0.4,
+                      },
+                    },
+                  }}>
+                  <p className="text-16px text-dark-300 font-normal tracking-wide mb-2">
+                  KỸ THUẬT
+                  </p>
+                  
+                  <h2 className="text-7xl text-[#66491C] font-bold mb-4 1024px:text-32px">
+                   {item.label}
+                  </h2>
+                 {item.price&& <div className="mb-4">
+                    <span className="px-5 py-6 border-[#DACEBD] rounded-lg border-2 text-[#66491C] bg-[#E6DDD0] bold">{item.price}</span>
+                  </div>}
+                  <div className="">                   
+                    <p className="text-[#322F2A] text-20px mb-4 1024px:text-16px">
+                     {item.content.title}
+                    </p>
+                    <p className="text-dark-100 text-20px font-medium mb-2 1024px:text-16px">
+                    Đây sẽ là phần cuối trong Khóa học:
+                    </p>
+                    {item.content.list.map((i,index)=>{
+                      return(
+                        <div className="flex items-center gap-4 mb-4" key={index}>
+                      <Image src={flowerIcon} alt="" />
+                      <p className="text-dark-100 text-18px font-normal 1024px:text-16px">
+                       {i.label}
+                      </p>
+                    </div>
+                      )
+                    })}
+                   
+                  </div>
+                </motion.div>
               </div>
-            </div>
-          </Tabs.TabPane>
-          <Tabs.TabPane tab=" Ombre" key="2">
-            Content of Tab Pane 2
-          </Tabs.TabPane>
-          <Tabs.TabPane tab="Shadow Brows" key="3">
-            Content of Tab Pane 3
-          </Tabs.TabPane>
-          <Tabs.TabPane tab="Điêu Khắc" key="3">
-            Content of Tab Pane 3
-          </Tabs.TabPane>
+            </Tabs.TabPane>
+            )
+          })
+         }
         </Tabs>
       </div>
     </div>

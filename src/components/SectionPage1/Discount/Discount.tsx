@@ -9,7 +9,7 @@ const Discount = () => {
         <Image src={bg} alt="" />
     </div>
     <div className='flex items-center gap-4 text-center justify-center bg-brown-200 py-8 mt-[-1rem]'>
-        <h2 className='text-brown-100 text-28px font-bold underline'>Đăng ký ngay</h2>
+        <h2 className='text-brown-100 text-28px font-bold underline 1024px:text-20px'>Đăng ký ngay</h2>
         <Image src={arrow} alt="" />
     </div>
     </div>

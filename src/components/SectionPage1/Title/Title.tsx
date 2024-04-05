@@ -1,17 +1,35 @@
 import line from "@/public/assets/images/icon/line.png"
 import Image from "next/image"
+import { motion } from "framer-motion";
 
 const TitleComponent = (props: any) => {
   return (
    <div>
-<section className="w-full mx-auto mb-24 max-w-screen-xl">
-        <div className="relative">
-            <h2 className='lg:text-6xl font-bold text-dark-100 text-center sm:text-4xl md:text-5xl uppercase'>{props.title1} </h2>
-            <h2 className='lg:text-6xl font-bold text-dark-100 text-center sm:text-4xl md:text-5xl uppercase'>{props.title2}</h2>
+<section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1024px:mb-[4rem]">
+        <motion.div className="relative" initial="hide"
+                whileInView="show"
+                viewport={{ once: true }}
+                exit="hide"
+                variants={{
+                  hide: {
+                    opacity: 0,
+                    y: 200,
+                  },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.8,
+                      bounce: 0.7,
+                    },
+                  },
+                }}>
+            <h2 className='text-7xl font-bold text-dark-100 text-center 1280:text-42px 1024px:text-32px 475px:text-20pxim'>{props.title1} </h2>
+            <h2 className='text-7xl font-bold text-dark-100 text-center 1280:text-42px 1024px:text-32px 475px:text-20pxim'>{props.title2}</h2>
             <div className="absolute bottom-[-10%] left-[50%] translate-x-[-50%] ">
                 <Image src={line} alt="" />
             </div>
-        </div>
+        </motion.div>
        
     </section>
 

@@ -29,6 +29,10 @@ line-height: 43.92px;
 letter-spacing: -0.016em;
 text-align: center;
 color: #322F2A;
+@media (max-width: 475px) {
+  font-size: 22px;
+  line-height: 30px;
+}
 }
 
 .section{
@@ -45,12 +49,16 @@ color: #322F2A;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120rem;
+    width: 125rem;
     position: absolute;      
+    padding: 5rem;
   }
   .title{
     font-size: 6rem;
     line-height:100% ;
+    @media (max-width: 1024px) {
+      font-size: 4.2rem;
+    }
   }
 }
 

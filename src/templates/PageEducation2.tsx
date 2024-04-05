@@ -19,6 +19,7 @@ import {  DataBlockList2 } from '@/utils/config/blockList';
 import { DataContact3 } from '@/utils/config/contact';
 import {  DataEducation2 } from '@/utils/config/education';
 import {  DataSolution2 } from '@/utils/config/solution';
+import {  DataTab4 } from '@/utils/config/tab';
 
 const PageEducation2 = () => (
   <div className="text-gray-600 antialiased">
@@ -26,7 +27,7 @@ const PageEducation2 = () => (
     <Navbar />
     <Banner data={DataBanner4} />
     <Solution data={DataSolution2} />
-    <TabComponent/>
+    <TabComponent data={DataTab4}/>
     <Education data={DataEducation2} />
     <Attractiveness data={DataAttractiveness2} />
     <BlockList data={DataBlockList2} dataTable={null} />
