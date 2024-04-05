@@ -27,7 +27,7 @@ const Contact = (props: Props) => (
   
   <div className="section rounded-2xl  mb-[8rem] 1280:px-[4rem]">
     <div
-      className={`${style.BgContact} relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-6`}
+      className={`${style.BgContact} relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-24`}
     >
       <div className="hidden lg:block">
         <Image src={BgContact} alt="" />

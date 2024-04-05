@@ -1,9 +1,9 @@
-.element{
+.element {
   border-radius: 12px;
-  border: 2px solid #F1EBE3;
-} 
+  border: 2px solid #f1ebe3;
+}
 
-.label{
+.label {
   //styleName: Typo/Subtitle 1/Regular;
   font-family: Roboto;
   font-size: 20px;
@@ -12,16 +12,14 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  color: #423F3A;
+  color: #423f3a;
 }
 
-
-
 @media (max-width: 992px) {
-  .custom_order{
+  .custom_order {
     order: 4;
   }
-  .block{
+  .block {
     height: 40rem;
     padding-top: 10rem;
   }

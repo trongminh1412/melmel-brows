@@ -1,4 +1,5 @@
-import HomePage from '@/components/MelMelEdu/HomePage';
-const Index = () => <HomePage />;
+import { PageEducation } from '../templates/PageEducation';
+
+const Index = () => <PageEducation />;
 
 export default Index;

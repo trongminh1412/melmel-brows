@@ -4,6 +4,7 @@ import { Col, Row } from 'antd';
 import Image from 'next/image';
 
 import style from './blockListImage.module.scss';
+import TitleComponent from '../SectionPage1/Title/Title';
 
 type Props = {
   data: {
@@ -13,12 +14,14 @@ type Props = {
   };
 };
 const BlockListImage = (props: Props) => (
-  <div className="section rounded-xl shadow">
+  <div className="section rounded-xl">
     <div
       className={
-        'relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-6'
+        'relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-center px-4 py-24'
       }
     >
+      <TitleComponent title2="NHỮNG HÌNH ẢNH HOẠT ĐỘNG TẠI MELMEL BROWS"/>
+
       <div className="mb-12 flex justify-center text-[20px] font-[400] leading-[30px] text-[#423F3A]">
         <span className="text-center"> {props.data.title}</span>
       </div>

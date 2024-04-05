@@ -1,8 +1,8 @@
+import style from './education.module.scss';
 import { Col, Row } from 'antd';
 import Image from 'next/image';
 import React from 'react';
-
-import style from './education.module.scss';
+import TitleComponent from '../SectionPage1/Title/Title';
 
 type Props = {
   data: {
@@ -12,10 +12,11 @@ type Props = {
   }[];
 };
 const Education = (props: Props) => (
-  <div className="section rounded-xl shadow">
+  <div className="section rounded-xl">
     <div
-      className={`relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-6`}
+      className={`relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-center px-4 py-24`}
     >
+      <TitleComponent title2="Bạn Cũng Được"/>
       <div className={style.element}>
         <Row>
           {props.data.map((item, idx) => {
