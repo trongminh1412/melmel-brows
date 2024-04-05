@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import style from './blockListImage.module.scss';
 import TitleComponent from '../SectionPage1/Title/Title';
+import { motion } from 'framer-motion';
 
 type Props = {
   data: {
@@ -41,9 +42,28 @@ const BlockListImage = (props: Props) => (
                     : ''
               }
             >
-              <div>
+              <motion.div
+               initial="hide"
+               whileInView="show"
+               viewport={{ once: true }}
+               exit="hide"
+               variants={{
+                 hide: {
+                   opacity: 0,
+                   scaleX: -2,
+                 },
+                 show: {
+                   opacity: 1,
+                   scaleX: 1,
+                   transition: {
+                     duration: 0.7,
+                     bounce: 0.4,
+                   },
+                 },
+               }}  
+              >
                 <Image src={item.image} alt="picture" className="w-full" />
-              </div>
+              </motion.div>
             </Col>
           );
         })}

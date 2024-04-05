@@ -2,6 +2,7 @@ import flowerIcon from '@/public/assets/images/body/flower_icon.svg';
 import { Col, Row, Table } from 'antd';
 import Image from 'next/image';
 import TitleComponent from '../SectionPage1/Title/Title';
+import { motion } from 'framer-motion';
 
 type Props = {
   data: {
@@ -28,7 +29,26 @@ const BlockList = (props: Props) => (
         {props.data.list.map((item, idx) => {
           return (
             <Col xs={24} md={24} lg={12} key={idx}>
-              <div className="h-full rounded-lg border-2 border-solid border-[#E7E1D9] bg-[#FDFAF6] p-[25px]">
+              <motion.div className="h-full rounded-lg border-2 border-solid border-[#E7E1D9] bg-[#FDFAF6] p-[25px]"
+                  initial="hide"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  exit="hide"
+                  variants={{
+                    hide: {
+                      opacity: 0,
+                      y: 100,
+                    },
+                    show: {
+                      opacity: 1,
+                      y: 1,
+                      transition: {
+                        duration: 0.7,
+                        bounce: 0.4,
+                      },
+                    },
+                  }}              
+              >
                 {item.map((i, index) => {
                   return (
                     <Row className="text-3xl text-left font-bold text-[#423F3A] mb-12" key={index}>
@@ -44,7 +64,7 @@ const BlockList = (props: Props) => (
                     </Row>
                   );
                 })}
-              </div>
+              </motion.div>
             </Col>
           );
         })}

@@ -3,6 +3,7 @@ import { Col, Row } from 'antd';
 import Image from 'next/image';
 import React from 'react';
 import TitleComponent from '../SectionPage1/Title/Title';
+import { motion } from 'framer-motion';
 
 type Props = {
   data: {
@@ -29,12 +30,34 @@ const Education = (props: Props) => (
                     lg={6}
                     className="flex items-center justify-center p-0"
                   >
-                    <div className={`${style.block} w-full`}>
-                      <div className="tex-center flex justify-center">
-                        <Image src={item.image} alt="education" />
-                      </div>
-                      <span className={style.label}>{item.title}</span>
-                    </div>
+                    <motion.div 
+                        initial="hide"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        exit="hide"
+                        variants={{
+                          hide: {
+                            opacity: 0,
+                            y: 100,
+                          },
+                          show: {
+                            opacity: 1,
+                            y: 1,
+                            transition: {
+                              duration: 0.7,
+                              bounce: 0.4,
+                            },
+                          },
+                        }}            
+                      >
+                        <div className={`${style.block} w-full`}>
+                          <div className="tex-center flex justify-center">
+                            <Image src={item.image} alt="education" />
+                          </div>
+                          <span className={style.label}>{item.title}</span>
+                        </div>
+                         </motion.div>
+                    
                   </Col>
                 ) : (
                   <Col
@@ -43,13 +66,31 @@ const Education = (props: Props) => (
                     lg={6}
                     className={idx === 4 ? style.custom_order : ''}
                   >
-                    <div>
+                    <motion.div 
+                      initial="hide"
+                      whileInView="show"
+                      viewport={{ once: true }}
+                      exit="hide"
+                      variants={{
+                        hide: {
+                          opacity: 0,
+                          y: 100,
+                        },
+                        show: {
+                          opacity: 1,
+                          y: 1,
+                          transition: {
+                            duration: 0.7,
+                            bounce: 0.4,
+                          },
+                        },
+                      }}  >
                       <Image
                         src={item.image}
                         alt="education"
                         className={`size-full`}
                       />
-                    </div>
+                    </motion.div>
                   </Col>
                 )}
               </React.Fragment>

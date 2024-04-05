@@ -4,6 +4,7 @@ import Image from 'next/image';
 import AttractiveImg from '@/public/assets/images/body/attractive_img.svg';
 
 import TitleComponent from '../SectionPage1/Title/Title';
+import { motion } from 'framer-motion';
 
 type Props = {
   data: {
@@ -29,8 +30,28 @@ const Attractiveness = (props: Props) => (
             {props.data.list.map((item, idx) => {
               return (
                 <Col xs={12} md={12} lg={12} key={idx}>
-                  <div className="text-left">
-                    <div className="tex-left justify-left mb-8 flex">
+                  <motion.div  
+                   className="text-left"
+                      initial="hide"
+                      whileInView="show"
+                      viewport={{ once: true }}
+                      exit="hide"
+                      variants={{
+                        hide: {
+                          opacity: 0,
+                          y: 100,
+                        },
+                        show: {
+                          opacity: 1,
+                          y: 1,
+                          transition: {
+                            duration: 0.7,
+                            bounce: 0.4,
+                          },
+                        },
+                      }}  
+                      >
+                      <div className="tex-left justify-left mb-8 flex">
                       <Image src={item.icon} alt="attractive" />
                     </div>
                     <div className="text-3xl text-left font-bold text-[#423F3A]">{item.title}</div>
@@ -38,16 +59,34 @@ const Attractiveness = (props: Props) => (
                       className="text-2xl text-left font-normal text-[#423F3A]"
                       dangerouslySetInnerHTML={{ __html: item.subTitle }}
                     />
-                  </div>
+                      </motion.div>
                 </Col>
               );
             })}
           </Row>
         </Col>
         <Col xs={24} md={24} lg={9}>
-          <div>
+          <motion.div
+           initial="hide"
+           whileInView="show"
+           viewport={{ once: true }}
+           exit="hide"
+           variants={{
+             hide: {
+               opacity: 0,
+               y: 100,
+             },
+             show: {
+               opacity: 1,
+               y: 1,
+               transition: {
+                 duration: 0.7,
+                 bounce: 0.4,
+               },
+             },
+           }}  >
             <Image src={AttractiveImg} alt="attractive" className="w-full" />
-          </div>
+          </motion.div>
         </Col>
       </Row>
     </div>
