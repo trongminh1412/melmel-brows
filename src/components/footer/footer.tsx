@@ -2,10 +2,10 @@ import { Col, Row } from 'antd';
 import Image from 'next/image';
 
 import { Section } from '@/layout/Section';
-import PhoneIcon from '@/public/assets/images/Call.svg';
-import LocationIcon from '@/public/assets/images/Location.svg';
-import LogoFooter from '@/public/assets/images/logoFooter.svg';
-import EmailIcon from '@/public/assets/images/Message.svg';
+import PhoneIcon from '@/public/assets/images/footer/Call.svg';
+import LocationIcon from '@/public/assets/images/footer/Location.svg';
+import LogoFooter from '@/public/assets/images/footer/logoFooter.svg';
+import EmailIcon from '@/public/assets/images/footer/Message.svg';
 
 import { Background } from '../background/Background';
 import style from './footer.module.scss';

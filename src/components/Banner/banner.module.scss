@@ -1,0 +1,40 @@
+
+.title{
+  font-family: New York Extra Large;
+  font-size: 4rem;
+  line-height: 30px;
+  font-weight: 500;
+  text-align: left;
+  color:#614417 
+}
+.subtitle{
+  font-size: 2.2rem;
+  font-weight: 500;
+  text-align: left;
+  color: #272B2F;
+}
+.excellent{
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 24.32px;
+  letter-spacing: -0.012em;
+  text-align: left;
+  color: #272B2F;
+}
+.content{
+  background: #FDFAF6 ;
+}
+
+@media (min-width: 992px) {
+  .content{
+    position: absolute;
+    top: 50%;
+    width: 60rem;
+    transform: translate(10%, -50%);
+    background-color: transparent;    
+  }
+  .title{
+    font-size: 6rem;
+    line-height:100% ;
+  }
+}
