@@ -46,37 +46,37 @@ const FeedbackComponents = () => {
           {customerPage1.map((item,  idx) =>{
             return(
 
-              <SwiperSlide>
-              <div key={idx} className="w-[32%] p-8 shadow-md rounded-[12px] bg-white mb-6 475px:w-full">
-         <div>
-         <div className="mb-[3rem]">
-            <Image src={item.img} alt="" />
-          </div>
-          <div className="mb-[2rem]">
-            <Image src={item.rate} alt="" />
-          </div>
-          <div className="flex justify-between items-center mb-6" >
-            <div className="flex items-center gap-6">
-              <div>
-                <Image src={item.avatar} alt="" />
-              </div>
-              <div>
-                <h2 className="text-24px text-dark-100 font-medium 1024px:text-18px">{item.customerName}</h2>
-                <p className="text-18px text-dark-200 font-normal 1024px:text-16px">{item.location}</p>
-              </div>
-            </div>
-            <div>
-              <Image src={item.quote} alt="" />
-            </div>
-          </div>
-          <div>
-            <p className="text-18px text-dark-200 font-normal 1024px:text-16px">{item.description}</p>
-          </div>
-         </div>
-          <div>
-          
-          </div>
-        </div>
+              <SwiperSlide  key={idx}>
+              <div className="w-[32%] p-8 shadow-md rounded-[12px] bg-white mb-6 475px:w-full">
+                <div>
+                <div className="mb-[3rem]">
+                    <Image src={item.img} alt="" />
+                  </div>
+                  <div className="mb-[2rem]">
+                    <Image src={item.rate} alt="" />
+                  </div>
+                  <div className="flex justify-between items-center mb-6" >
+                    <div className="flex items-center gap-6">
+                      <div>
+                        <Image src={item.avatar} alt="" />
+                      </div>
+                      <div>
+                        <h2 className="text-24px text-dark-100 font-medium 1024px:text-18px">{item.customerName}</h2>
+                        <p className="text-18px text-dark-200 font-normal 1024px:text-16px">{item.location}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <Image src={item.quote} alt="" />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-18px text-dark-200 font-normal 1024px:text-16px">{item.description}</p>
+                  </div>
+                </div>
+                  <div>
+                  
+                  </div>
+                </div>
               </SwiperSlide>
             
         
