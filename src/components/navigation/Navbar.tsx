@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-
 import Logo from '@/public/assets/images/logo.svg';
 import menu from '@/utils/config/menu.json';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 import style from './Navbar.module.scss';
+
 
 const Navbar: React.FC = () => {
   const [navOpen, setNavOpen] = useState(false);
