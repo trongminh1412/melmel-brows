@@ -24,6 +24,12 @@ import Discount from "./Discount/Discount";
 import FaqsComponent from "./Faqs/FaqsComponent";
 import FeedbackComponents from "./Feedback/FeedbackComponents";
 import TabComponent from "./TabComponent/Tab";
+import Navbar from "../navigation/Navbar";
+import { Banner } from "../Banner/banner";
+import { DataBanner1 } from "@/utils/config/banner";
+import { Contact } from "../Contact/contact";
+import { DataContact1 } from "@/utils/config/contact";
+import { motion } from "framer-motion";
 export const contentPage1 = [
   {
     img: rec,
@@ -122,13 +128,18 @@ export const customerPage1 = [
     description:
       "Mỗi lần về Việt Nam, tôi đều phải ghé tới MelMel để xâm chân mày. chất lượng và cách các bạn làm dịch vụ cho mình rất chuyên nghiệp. mình mong sao MelMel Brows có chi nhánh",
   },
-
 ];
 
 const HomePage1 = () => {
   return (
     <div>
-      <section className="w-full mx-auto mb-16 max-w-screen-xl">
+      <section>
+        <Navbar />
+      </section>
+      <section>
+        <Banner data={DataBanner1} />
+      </section>
+      <section className="w-full mx-auto mb-[8rem] max-w-screen-xl  1280:px-[4rem]">
         <TitleComponent
           title1="Phun Mày - Giải pháp"
           title2="Làm đẹp của nàng hiện đại"
@@ -137,13 +148,13 @@ const HomePage1 = () => {
           <Image src={image1} alt="" />
         </div>
       </section>
-      <section className="w-full mx-auto mb-16 max-w-screen-xl">
+      <section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem]">
         <TitleComponent title1="Các Kĩ Thuật Phun Xăm" title2="" />
         <div>
-            <TabComponent />
+          <TabComponent />
         </div>
       </section>
-      <section className="w-full mx-auto mb-32 max-w-screen-xl">
+      <section className="w-full mx-auto mb-32 max-w-screen-xl 1280:px-[4rem]">
         <div>
           {" "}
           <TitleComponent
@@ -152,32 +163,102 @@ const HomePage1 = () => {
           />
         </div>
         <div className="mb-14">
-          <p className="text-center text-20px font-normal text-dark-200">
+          <motion.p className="text-center text-20px font-normal text-dark-200 1024px:text-16px" initial="hide"
+                whileInView="show"
+                viewport={{ once: true }}
+                exit="hide"
+                variants={{
+                  hide: {
+                    opacity: 0,
+                    rotateX: -200,
+                  },
+                  show: {
+                    opacity: 1,
+                    rotateX: 0,
+                    transition: {
+                      duration: 1.2,
+                      bounce: 0.4,
+                    },
+                  },
+                }}>
             MelMel Brows là đơn vị phun xăm thẩm mỹ thành lập từ 2016 bởi Grand
             Master Lư Yến Thanh. Với thế mạnh về kỹ năng và kinh nghiệm trải dài
             đến tận An Giang, MelMel Brows chuyên xoá sửa và khắc phục ca khó
-          </p>
+          </motion.p>
         </div>
-
-        <div>
+        <div className="hidden 475px:block">
+        {contentPage1.map((i, idx) => {
+                    return (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-[1rem] mb-4"
+                      >
+                        <Image src={i.img} alt="" />
+                        <h2 className="text-20px font-normal text-dark-100 1024px:text-18px">
+                          {i.title}
+                        </h2>
+                      </div>
+                    );
+                  })}
+        </div>
+        
+        <div className="475px:hidden">
           <Swiper
-            // pagination={
-            //     <Image src={pagina} alt="" />
-            // }
             pagination={true}
             loop
             modules={[Pagination]}
             className="mySwiper"
+            breakpoints={{
+          
+              475: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+            }}
           >
             <SwiperSlide>
-              <div className="flex justify-between gap-4">
-                <div className="w-[40%]">
+              <div className="flex justify-between gap-4" >
+                <motion.div className="w-[40%] 475px:w-full" initial="hide"
+                whileInView="show"
+                viewport={{ once: true }}
+                exit="hide"
+                variants={{
+                  hide: {
+                    opacity: 0,
+                    x: -200,
+                  },
+                  show: {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      duration: 1.2,
+                      bounce: 0.4,
+                    },
+                  },
+                }}>
                   <Image src={bg1} alt="" />
-                </div>
-                <div className="w-[40%]">
+                </motion.div>
+                <motion.div className="w-[40%] 475px:w-full" initial="hide"
+                whileInView="show"
+                viewport={{ once: true }}
+                exit="hide"
+                variants={{
+                  hide: {
+                    opacity: 0,
+                    x: -200,
+                  },
+                  show: {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      duration: .8,
+                      bounce: 0.4,
+                    },
+                  },
+                }}>
                   <Image src={bg2} alt="" />
-                </div>
-                <div className="w-[42%]">
+                </motion.div>
+                <div className="w-[42%] 475px:w-full">
                   {contentPage1.map((i, idx) => {
                     return (
                       <div
@@ -185,7 +266,7 @@ const HomePage1 = () => {
                         className="flex items-center gap-[1rem] mb-4"
                       >
                         <Image src={i.img} alt="" />
-                        <h2 className="text-20px font-normal text-dark-100">
+                        <h2 className="text-20px font-normal text-dark-100 1024px:text-18px">
                           {i.title}
                         </h2>
                       </div>
@@ -210,7 +291,7 @@ const HomePage1 = () => {
                         className="flex items-center gap-[1rem] mb-4"
                       >
                         <Image src={i.img} alt="" />
-                        <h2 className="text-20px font-normal text-dark-100">
+                        <h2 className="text-20px font-normal text-dark-100 1024px:text-18px">
                           {i.title}
                         </h2>
                       </div>
@@ -221,19 +302,68 @@ const HomePage1 = () => {
             </SwiperSlide>
           </Swiper>
         </div>
+        <motion.div className="hidden 475px:block" initial="hide"
+                whileInView="show"
+                viewport={{ once: true }}
+                exit="hide"
+                variants={{
+                  hide: {
+                    opacity: 0,
+                    y: 200,
+                  },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: .8,
+                      bounce: 0.4,
+                    },
+                  },
+                }}>
+          <Swiper
+            pagination={true}
+            loop
+            modules={[Pagination]}
+            className="mySwiper"
+            breakpoints={{
+          
+              475: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+            }}
+          >
+            <SwiperSlide>
+            <div className="w-full">
+                  <Image src={bg2} alt="" />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div className="w-full">
+                  <Image src={bg1} alt="" />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div className="w-full">
+                  <Image src={bg1} alt="" />
+                </div>
+            </SwiperSlide>
+          </Swiper>
+        </motion.div>
       </section>
-      <div>
+      <div >
         <FeedbackComponents />
       </div>
-       
-      <section className="mb-16">
+
+      <section className="mb-[8rem]">
         <Discount />
       </section>
-          <section>
-            <FaqsComponent />
-          </section>
-      
-
+      <section>
+        <Contact dataContact1={DataContact1} data={null} />
+      </section>
+      <section>
+        <FaqsComponent />
+      </section>
     </div>
   );
 };

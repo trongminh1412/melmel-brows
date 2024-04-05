@@ -24,12 +24,12 @@ const Faqs = (props: any) => {
         
         >
           <Panel
-            className="pb-12 my-12"
+            className="pb-12 my-12 1024px:pb-6 1024px:my-6"
             showArrow={false}
             
             header={
               <div className="flex justify-between items-center">
-                <p className="text-24px font-medium text-brown-300">
+                <p className="text-24px font-medium text-brown-300 1024px:text-18px">
                   {props.header}
                   
                 </p>
@@ -45,7 +45,7 @@ const Faqs = (props: any) => {
             }
             key={props.key}
           >
-            <p className="text-20px font-normal text-dark-200">
+            <p className="text-20px font-normal text-dark-200 1024px:text-16px">
            
               {props.content}
             </p>

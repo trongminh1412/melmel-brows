@@ -1,4 +1,3 @@
-import Image from "next/image";
 import banner from "@/public/assets/images/edu/banner.png";
 import card1 from "@/public/assets/images/edu/card1.png";
 import card2 from "@/public/assets/images/edu/card2.png";
@@ -10,17 +9,17 @@ import time from "@/public/assets/images/icon/clock.png";
 import grad from "@/public/assets/images/icon/grad.png";
 import poly from "@/public/assets/images/icon/poly.png";
 import { Carousel } from "antd";
+import Image from "next/image";
 import Discount from "../SectionPage1/Discount/Discount";
 import FaqsComponent from "../SectionPage1/Faqs/FaqsComponent";
-import Feedback from "../SectionPage1/Feedback/Feedback";
-import { customerPage1 } from "../SectionPage1/HomePage";
+import FeedbackComponents from "../SectionPage1/Feedback/FeedbackComponents";
 import TitleComponent from "../SectionPage1/Title/Title";
 import { Footer } from "../footer/footer";
 import Navbar from "../navigation/Navbar";
 export const blogEdu = [
   {
     id: 1,
-    title: "khóa tổng hợp nền tảng phun xăm thẩm mỹ",
+    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
     time: "15 buổi",
     tech: "Phun xăm chuyên sâu",
     gradi: "M-REMOVAL MelMel Brows",
@@ -28,7 +27,7 @@ export const blogEdu = [
   },
   {
     id: 2,
-    title: "khóa tổng hợp nền tảng phun xăm thẩm mỹ",
+    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
     time: "15 buổi",
     tech: "Phun xăm chuyên sâu",
     gradi: "M-REMOVAL MelMel Brows",
@@ -36,7 +35,7 @@ export const blogEdu = [
   },
   {
     id: 3,
-    title: "khóa tổng hợp nền tảng phun xăm thẩm mỹ",
+    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
     time: "15 buổi",
     tech: "Phun xăm chuyên sâu",
     gradi: "M-REMOVAL MelMel Brows",
@@ -44,7 +43,15 @@ export const blogEdu = [
   },
   {
     id: 4,
-    title: "khóa tổng hợp nền tảng phun xăm thẩm mỹ",
+    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
+    time: "15 buổi",
+    tech: "Phun xăm chuyên sâu",
+    gradi: "M-REMOVAL MelMel Brows",
+    cover: card1,
+  },
+  {
+    id: 5,
+    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
     time: "15 buổi",
     tech: "Phun xăm chuyên sâu",
     gradi: "M-REMOVAL MelMel Brows",
@@ -97,257 +104,364 @@ const HomePage = () => {
   return (
     <div>
       <Navbar />
-      <section className="mb-16">
+      <section className="mb-[8rem]">
         <div className="object-cover aspect-auto">
           <Image src={banner} alt="" />
         </div>
       </section>
-      <section className="w-full mx-auto mb-16 max-w-screen-xl ">
+      <section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem]">
         <TitleComponent title1="THÔNG TIN KHÓA HỌC" />
         <div>
-          <p className="text-center text-20px text-dark-400 mb-6">``
+          <p className="text-center text-20px text-dark-400 mb-6 1024px:text-18px">
             MelMel Brows là đơn vị phun xăm thẩm mỹ thành lập từ 2016 bởi Grand
             Master Lư Yến Thanh. Với thế mạnh về kỹ năng và kinh nghiệm trải dài
             đến tận An Giang, MelMel Brows chuyên xoá sửa và khắc phục ca khó
           </p>
         </div>
-        <div></div>
       </section>
-      <section className="w-full mx-auto mb-16 max-w-screen-xl ">
-        <div>
-            <div>
-                <h2>Các khóa học tiêu biểu của MelMel Brow</h2>
-            </div>
-            
-        </div>
-      <Carousel
-      className="justify-between!important gap-[10rem!important]"
-      autoplay={true}
-      autoplaySpeed={5000}
-      rows={1}
-      slidesToShow={3}
-      slidesToScroll={1}
-      infinite={true}
-      arrows={true}
-      nextArrow={<Image alt="next" src={arrowRight} />}
-      prevArrow={<Image alt="prev" src={arrowRight} />}
-      dots={true}
-      swipeToSlide={true}
-      draggable
-    >
-        {blogEdu.map((item, idx) =>{
-            return(
-                <div key={idx} className="border-dark-500 border ml-auto w-[96%!important]">
-                    <div>
-                        <Image src={item.cover} alt=""/>
-                    </div>
-                   <div className="p-8">
-                   <div>
-                        <h2 className="text-24px font-bold text-dark-100">{item.title}</h2>
-                    </div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <Image src={time} alt="" />
-                        <p className="text-16px text-gray-1100">Thời lượng: <strong>{item.time}</strong></p>
-                    </div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <Image src={book} alt="" />
-                        <p className="text-16px text-gray-1100">Kỹ thuật dạy: <strong>{item.tech}</strong> </p>
-                    </div>
-                    <div className="flex items-center gap-4 mb-8">
-                        <Image src={grad} alt="" />
-                        <p className="text-16px text-gray-1100">Bằng cấp: <strong>{item.gradi}</strong> </p>
-                    </div>
-                    <div>
-                        <button className="flex items-center gap-4 justify-center bg-brown-600 text-white text-18px font-bold w-full rounded-lg h-[48px]">Đăng ký ngay 
+      <section className="w-full mx-auto mb-[8rem] max-w-screen-xl relative 1280:px-[4rem] 1024px:mb-[3rem]">
+        <h2 className="text-28px text-dark-100 font-bold mb-8 1280:text-24px 475px:text-18px">
+          Các khóa học tiêu biểu của MelMel Brow
+        </h2>
 
-                            <Image src={arrw} alt="" />
-                        </button>
-                    </div>
-                   </div>
+        <Carousel
+          className="justify-between!important gap-[10rem!important]"
+          autoplay={true}
+          autoplaySpeed={5000}
+          rows={1}
+          slidesToShow={3}
+          slidesToScroll={1}
+          infinite={true}
+          arrows={true}
+          responsive={[
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: "40"
+              },
+            },
+          ]}
+          nextArrow={
+            <div className="next-carou">
+              <Image alt="next" src={arrowRight} />
+            </div>
+          }
+          prevArrow={
+            <div className="next-carou">
+              <Image alt="prev" src={arrowRight} />
+            </div>
+          }
+          dots={true}
+          swipeToSlide={true}
+          draggable
+        >
+          {blogEdu.map((item, idx) => {
+            return (
+              <div
+                key={idx}
+                className="border-dark-500 border ml-auto w-[96%!important]"
+              >
+                <div>
+                  <Image src={item.cover} alt="" />
                 </div>
-            )
-        })}
+                <div className="p-8">
+                  <div>
+                    <h2 className="text-24px font-bold text-dark-100 1280:text-20px 1024px:text-18px 475px:text-16px">
+                      {item.title}
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={time} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Thời lượng: <strong>{item.time}</strong>
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={book} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 mb-8">
+                    <Image src={grad} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Bằng cấp: <strong>{item.gradi}</strong>{" "}
+                    </p>
+                  </div>
+                  <div>
+                    <button className="flex items-center gap-4 justify-center bg-brown-600 text-white text-18px font-bold w-full rounded-lg h-[48px] 1024px:text-14px">
+                      Đăng ký ngay
+                      <Image src={arrw} alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </Carousel>
       </section>
-      <section className="w-full mx-auto mb-16 max-w-screen-xl ">
-        <div>
-            <div>
-                <h2>Các khóa học tiêu biểu của MelMel Brow</h2>
-            </div>
-            
-        </div>
-      <Carousel
-      autoplay={true}
-      autoplaySpeed={5000}
-      rows={1}
-      slidesToShow={3}
-      slidesToScroll={1}
-      infinite={true}
-      arrows={true}
-      nextArrow={<Image alt="next" src={arrowRight} />}
-      prevArrow={<Image alt="prev" src={arrowRight} />}
-      dots={true}
-      swipeToSlide={true}
-      draggable
-    >
-        {blogEdu.map((item, idx) =>{
-            return(
-                <div key={idx} className="border-dark-500 border ">
-                    <div>
-                        <Image src={item.cover} alt=""/>
-                    </div>
-                   <div className="p-8">
-                   <div>
-                        <h2 className="text-24px font-bold text-dark-100">{item.title}</h2>
-                    </div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <Image src={time} alt="" />
-                        <p className="text-16px text-gray-1100">Thời lượng: <strong>{item.time}</strong></p>
-                    </div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <Image src={book} alt="" />
-                        <p className="text-16px text-gray-1100">Kỹ thuật dạy: <strong>{item.tech}</strong> </p>
-                    </div>
-                    <div className="flex items-center gap-4 mb-8">
-                        <Image src={grad} alt="" />
-                        <p className="text-16px text-gray-1100">Bằng cấp: <strong>{item.gradi}</strong> </p>
-                    </div>
-                    <div>
-                        <button className="flex items-center gap-4 justify-center bg-brown-600 text-white text-18px font-bold w-full rounded-lg h-[48px]">Đăng ký ngay 
-
-                            <Image src={arrw} alt="" />
-                        </button>
-                    </div>
-                   </div>
+      <section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem] 1024px:mb-[3rem]">
+        <h2 className="text-28px text-dark-100 font-bold mb-8 1280:text-24px 475px:text-18px">
+          Các khóa 1:1 Nền tảng PXTM (Grand Master + Master)
+        </h2>
+        <Carousel
+          autoplay={true}
+          autoplaySpeed={5000}
+          rows={1}
+          slidesToShow={4}
+          slidesToScroll={1}
+          infinite={true}
+          arrows={true}
+          nextArrow={<Image alt="next" src={arrowRight} />}
+          prevArrow={<Image alt="prev" src={arrowRight} />}
+          dots={true}
+          swipeToSlide={true}
+          draggable
+          responsive={[
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: "40"
+              },
+            },
+          ]}
+        >
+          {blogEdu.map((item, idx) => {
+            return (
+              <div
+                key={idx}
+                className="border-dark-500 border w-[96%!important]"
+              >
+                <div>
+                  <Image src={item.cover} alt="" />
                 </div>
-            )
-        })}
+                <div className="p-8">
+                  <div>
+                    <h2 className="text-24px font-bold text-dark-100 1280:text-20px 1024px:text-18px 475px:text-16px">
+                      {item.title}
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={time} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Thời lượng: <strong>{item.time}</strong>
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={book} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </Carousel>
       </section>
-      <section className="w-full mx-auto mb-16 max-w-screen-xl ">
-        <div>
-            <div>
-                <h2>Các khóa học tiêu biểu của MelMel Brow</h2>
-            </div>
-            
-        </div>
-      <Carousel
-      autoplay={true}
-      autoplaySpeed={5000}
-      rows={1}
-      slidesToShow={3}
-      slidesToScroll={1}
-      infinite={true}
-      arrows={true}
-      nextArrow={<Image alt="next" src={arrowRight} />}
-      prevArrow={<Image alt="prev" src={arrowRight} />}
-      dots={true}
-      
-      swipeToSlide={true}
-      dotPosition="bottom"
-      draggable
-    >
-        {blogEdu.map((item, idx) =>{
-            return(
-                <div key={idx} className="border-dark-500 border">
-                    <div>
-                        <Image src={item.cover} alt=""/>
-                    </div>
-                   <div className="p-8">
-                   <div>
-                        <h2 className="text-24px font-bold text-dark-100">{item.title}</h2>
-                    </div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <Image src={time} alt="" />
-                        <p className="text-16px text-gray-1100">Thời lượng: <strong>{item.time}</strong></p>
-                    </div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <Image src={book} alt="" />
-                        <p className="text-16px text-gray-1100">Kỹ thuật dạy: <strong>{item.tech}</strong> </p>
-                    </div>
-                    <div className="flex items-center gap-4 mb-8">
-                        <Image src={grad} alt="" />
-                        <p className="text-16px text-gray-1100">Bằng cấp: <strong>{item.gradi}</strong> </p>
-                    </div>
-                    <div>
-                        <button className="flex items-center gap-4 justify-center bg-brown-600 text-white text-18px font-bold w-full rounded-lg h-[48px]">Đăng ký ngay 
-
-                            <Image src={arrw} alt="" />
-                        </button>
-                    </div>
-                   </div>
+      <section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem] 1024px:mb-[3rem]">
+        <h2 className="text-28px text-dark-100 font-bold mb-8 1280:text-24px 475px:text-18px">
+          Các khóa 1:1 Master class (Grand master Lư Yến Thanh)
+        </h2>
+        <Carousel
+          autoplay={true}
+          autoplaySpeed={5000}
+          rows={1}
+          slidesToShow={4}
+          slidesToScroll={1}
+          infinite={true}
+          arrows={true}
+          nextArrow={<Image alt="next" src={arrowRight} />}
+          prevArrow={<Image alt="prev" src={arrowRight} />}
+          dots={true}
+          swipeToSlide={true}
+          dotPosition="bottom"
+          draggable
+          responsive={[
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: "40"
+              },
+            },
+          ]}
+        >
+          {blogEdu.map((item, idx) => {
+            return (
+              <div
+                key={idx}
+                className="border-dark-500 border w-[96%!important]"
+              >
+                <div>
+                  <Image src={item.cover} alt="" />
                 </div>
-            )
-        })}
+                <div className="p-8">
+                  <div>
+                    <h2 className="text-24px font-bold text-dark-100  1280:text-20px  1024px:text-18px 475px:text-16px">
+                      {item.title}
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={time} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Thời lượng: <strong>{item.time}</strong>
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={book} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </Carousel>
       </section>
-      <section className="w-full mx-auto mb-16 max-w-screen-xl ">
-        <div>
-            <div>
-                <h2>Các khóa học tiêu biểu của MelMel Brow</h2>
-            </div>
-            
-        </div>
-      <Carousel
-      autoplay={true}
-      autoplaySpeed={5000}
-      rows={1}
-      slidesToShow={3}
-      slidesToScroll={1}
-      infinite={true}
-      arrows={true}
-      nextArrow={<Image alt="next" src={arrowRight} />}
-      prevArrow={<Image alt="prev" src={arrowRight} />}
-      dots={true}
-      swipeToSlide={true}
-      draggable
-    >
-        {blogEdu.map((item, idx) =>{
-            return(
-                <div key={idx} className="border-dark-500 border">
-                    <div>
-                        <Image src={item.cover} alt=""/>
-                    </div>
-                   <div className="p-8">
-                   <div>
-                        <h2 className="text-24px font-bold text-dark-100">{item.title}</h2>
-                    </div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <Image src={time} alt="" />
-                        <p className="text-16px text-gray-1100">Thời lượng: <strong>{item.time}</strong></p>
-                    </div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <Image src={book} alt="" />
-                        <p className="text-16px text-gray-1100">Kỹ thuật dạy: <strong>{item.tech}</strong> </p>
-                    </div>
-                    <div className="flex items-center gap-4 mb-8">
-                        <Image src={grad} alt="" />
-                        <p className="text-16px text-gray-1100">Bằng cấp: <strong>{item.gradi}</strong> </p>
-                    </div>
-                    <div>
-                        <button className="flex items-center gap-4 justify-center bg-brown-600 text-white text-18px font-bold w-full rounded-lg h-[48px]">Đăng ký ngay 
+      <section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem] 1024px:mb-[3rem]">
+        <h2 className="text-28px text-dark-100 font-bold mb-8 1280:text-24px 475px:text-18px">
+          Các khóa 1:1 Master class (Grand master Lư Yến Thanh)
+        </h2>
 
-                            <Image src={arrw} alt="" />
-                        </button>
-                    </div>
-                   </div>
+        <Carousel
+          autoplay={true}
+          autoplaySpeed={5000}
+          rows={1}
+          slidesToShow={4}
+          slidesToScroll={1}
+          infinite={true}
+          arrows={true}
+          nextArrow={<Image alt="next" src={arrowRight} />}
+          prevArrow={<Image alt="prev" src={arrowRight} />}
+          dots={true}
+          swipeToSlide={true}
+          draggable
+          responsive={[
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: "40"
+              },
+            },
+          ]}
+        >
+          {blogEdu.map((item, idx) => {
+            return (
+              <div
+                key={idx}
+                className="border-dark-500 border w-[96%!important]"
+              >
+                <div>
+                  <Image src={item.cover} alt="" />
                 </div>
-            )
-        })}
+                <div className="p-8">
+                  <div>
+                    <h2 className="text-24px font-bold text-dark-100  1280:text-20px 1024px:text-18px 475px:text-16px">
+                      {item.title}
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={time} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Thời lượng: <strong>{item.time}</strong>
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={book} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </Carousel>
       </section>
-      
-      <section className="">
-        <div className="w-full mx-auto mb-16 max-w-screen-xl pb-60">
-          <div>
+      <section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem] 1024px:mb-[3rem]">
+        <h2 className="text-28px text-dark-100 font-bold mb-8 1280:text-24px 475px:text-18px">
+          Các khóa nền tảng chuyên đề phun xăm thẩm mỹ học nhóm
+        </h2>
+
+        <Carousel
+          autoplay={true}
+          autoplaySpeed={5000}
+          rows={1}
+          slidesToShow={4}
+          slidesToScroll={1}
+          infinite={true}
+          arrows={true}
+          nextArrow={<Image alt="next" src={arrowRight} />}
+          prevArrow={<Image alt="prev" src={arrowRight} />}
+          dots={true}
+          swipeToSlide={true}
+          draggable
+          responsive={[
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: "40"
+              },
+            },
+          ]}
+        >
+          {blogEdu.map((item, idx) => {
+            return (
+              <div
+                key={idx}
+                className="border-dark-500 border w-[96%!important]"
+              >
+                <div>
+                  <Image src={item.cover} alt="" />
+                </div>
+                <div className="p-8">
+                  <div>
+                    <h2 className="text-24px font-bold text-dark-100 1280:text-20px 1024px:text-18px 475px:text-16px">
+                      {item.title}
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={time} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Thời lượng: <strong>{item.time}</strong>
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <Image src={book} alt="" />
+                    <p className="text-16px text-gray-1100 1024px:text-14px">
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </Carousel>
+      </section>
+
+      <section className="1280:px-[4rem] w-full mx-auto mb-[8rem] max-w-screen-xl  1024px:mb-[3rem]">
+      <div>
             <TitleComponent title1="ĐỘI NGŨ GIẢNG VIÊN" />
-            <p className="text-center text-20px text-dark-400 mb-16">
+            <p className="text-center text-20px text-dark-400 mb-[8rem]">
               MelMel Brows tự hào là trung tâm đào tạo có chất lượng đào tạo
               nghề Phun xăm Thẩm mỹ chất lượng nhất hiện nay sở hữu đội ngũ
               Giảng viên có “tâm” và “tầm” trong ngành với hơn 16 năm kinh
               nghiệm trong giảng dạy và đào tạo.
             </p>
           </div>
+        <div className="w-full mx-auto mb-[8rem] max-w-screen-xl 475px:hidden">
+          
           <div className="flex justify-between gap-4">
             <div className="relative overflow-hidden h-full">
               <div>
@@ -415,27 +529,94 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
-      <section className="w-[95%] mx-auto mb-32 ">
-        <TitleComponent title1="CẢM NHẬN CỦA HỌC VIÊN" />
-        <div className="flex justify-between gap-4 flex-wrap">
-          {customerPage1.map((item, idx) => {
-            return (
-              <Feedback
-                key={idx}
-                img={item.img}
-                rate={item.rate}
-                avatar={item.avatar}
-                customerName={item.customerName}
-                location={item.location}
-                quote={item.quote}
-                description={item.description}
-              />
-            );
-          })}
+        <div className="hidden 475px:block">
+          <Carousel
+            autoplay={true}
+            autoplaySpeed={5000}
+            rows={1}
+            slidesToShow={1}
+            slidesToScroll={1}
+            infinite={true}
+            arrows={false}
+            nextArrow={<Image alt="next" src={arrowRight} />}
+            prevArrow={<Image alt="prev" src={arrowRight} />}
+            dots={true}
+            swipeToSlide={true}
+            centerMode
+            centerPadding="40"
+            draggable
+          >
+            <div className="relative overflow-hidden h-full w-full">
+              <div>
+                <Image src={card3} alt="" />
+              </div>
+              <div className="absolute bottom-0">
+                <Image src={poly} alt="" />
+              </div>
+              <div className="absolute z-10 bottom-[2%] left-[10%]">
+                <h2 className="text-20px text-white font-medium">
+                  Lư Yến Thanh
+                </h2>
+                <p className="text-16px font-normal text-gray-1000">
+                  Grand Master
+                </p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden h-full w-full">
+              <div>
+                <Image src={card3} alt="" />
+              </div>
+              <div className="absolute bottom-0">
+                <Image src={poly} alt="" />
+              </div>
+              <div className="absolute z-10 bottom-[2%] left-[10%]">
+                <h2 className="text-20px text-white font-medium">
+                  Lư Yến Thanh
+                </h2>
+                <p className="text-16px font-normal text-gray-1000">
+                  Grand Master
+                </p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden h-full w-full">
+              <div>
+                <Image src={card3} alt="" />
+              </div>
+              <div className="absolute bottom-0">
+                <Image src={poly} alt="" />
+              </div>
+              <div className="absolute z-10 bottom-[2%] left-[10%]">
+                <h2 className="text-20px text-white font-medium">
+                  Lư Yến Thanh
+                </h2>
+                <p className="text-16px font-normal text-gray-1000">
+                  Grand Master
+                </p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden h-full w-full">
+              <div>
+                <Image src={card3} alt="" />
+              </div>
+              <div className="absolute bottom-0">
+                <Image src={poly} alt="" />
+              </div>
+              <div className="absolute z-10 bottom-[2%] left-[10%]">
+                <h2 className="text-20px text-white font-medium">
+                  Lư Yến Thanh
+                </h2>
+                <p className="text-16px font-normal text-gray-1000">
+                  Grand Master
+                </p>
+              </div>
+            </div>
+          </Carousel>
         </div>
       </section>
-      <section className="mb-16">
+      <div>
+        <FeedbackComponents />
+      </div>
+      <section className="mb-[8rem]">
         <Discount />
       </section>
       <section>

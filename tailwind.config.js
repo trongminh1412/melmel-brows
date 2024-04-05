@@ -10,11 +10,15 @@ module.exports = {
       '2xl': '1.5rem',
       '3xl': '1.875rem',
       '4xl': '2.25rem',
+      "14px": "14px",
       "16px": "16px",
       "18px": "18px",
       "20px": "20px",
+      "20pxim": "20px!important",
       "24px": "24px",
       "28px": "28px",
+      "32px": "32px",
+      "42px": "42px",
       '5xl': '3rem',
       '6xl': '4rem',
       "7xl": "52px"
@@ -50,7 +54,8 @@ module.exports = {
           200: "#525560",
           300: "#414447",
           400: "#423F3A",
-          500: "#EBEBEB"
+          500: "#EBEBEB",
+          600: "#6C778D"
         },
         shadow: {
           card: "0px 0px 16px 0px #0000001A",
@@ -62,12 +67,25 @@ module.exports = {
           400: "#E1E1E0",
           500: "#FCF6EF",
           600: "#94774A",
-          700: "#FDFAF6"
+          700: "#FDFAF6",
+          800: "#453113"
         }
       },
       lineHeight: {
         hero: '4.5rem',
       },
+      screens:{
+        "475px": {
+          max: "475px"
+        },
+        "1024px": {
+          max: "1024px"
+        },
+        "1280": {
+          max:"1280px"
+        },
+
+      }
     },
   },
   plugins: [],

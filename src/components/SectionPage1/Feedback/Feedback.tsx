@@ -1,10 +1,32 @@
-import React from "react";
 import Image from "next/image";
+// Import Swiper React components
+
+import "swiper/css";
+import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 const Feedback = (props: any) => {
   return (
-      <div key={props.key} className="w-[32%] p-8 shadow-md rounded-[12px] bg-white mb-6">
-        <div className="mb-[3rem]">
+      <motion.div key={props.key} className="w-[32%] p-8 shadow-md rounded-[12px] bg-white mb-6" initial="hide"
+      whileInView="show"
+      viewport={{ once: true }}
+      exit="hide"
+      variants={{
+        hide: {
+          opacity: 0,
+          y: 200,
+        },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: .8,
+            bounce: 0.4,
+          },
+        },
+      }}>
+       <div>
+       <div className="mb-[3rem]">
           <Image src={props.img} alt="" />
         </div>
         <div className="mb-[2rem]">
@@ -16,8 +38,8 @@ const Feedback = (props: any) => {
               <Image src={props.avatar} alt="" />
             </div>
             <div>
-              <h2 className="text-24px text-dark-100 font-medium">{props.customerName}</h2>
-              <p className="text-18px text-dark-200 font-normal">{props.location}</p>
+              <h2 className="text-24px text-dark-100 font-medium 1024px:text-18px">{props.customerName}</h2>
+              <p className="text-18px text-dark-200 font-normal 1024px:text-16px">{props.location}</p>
             </div>
           </div>
           <div>
@@ -25,9 +47,13 @@ const Feedback = (props: any) => {
           </div>
         </div>
         <div>
-          <p className="text-18px text-dark-200 font-normal">{props.description}</p>
+          <p className="text-18px text-dark-200 font-normal 1024px:text-16px">{props.description}</p>
         </div>
-      </div>
+       </div>
+        <div>
+        
+        </div>
+      </motion.div>
   );
 };
 

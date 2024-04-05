@@ -47,10 +47,10 @@ export const faqPage1 = [
 ];
 const FaqsComponent = () => {
   return (
-    <div>
-      <section className="bg-[url(/background3.png)] bg-no-repeat">
+    <div >
+      <section className="bg-[url(/background3.png)] bg-no-repeat pb-16  475px:px-[2rem]">
         <TitleComponent title1="Câu hỏi thường gặp"/>
-        <div className="mx-auto w-[50%] mt-[10rem] bg-white p-12 rounded-3xl border-[1px]">
+        <div className="mx-auto w-[50%] mt-[10rem] bg-white p-12 rounded-3xl border-[1px] 1024px:mt-[7rem] 475px:w-full">
           {faqPage1.map((item,) => {
             return (
               <div>
