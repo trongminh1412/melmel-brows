@@ -15,9 +15,9 @@ type Props = {
   } | null;
 };
 const Contact = (props: Props) => (
-  <div className="section rounded-xl shadow">
+  <div className="section rounded-xl">
     <div
-      className={`${style.BgContact} relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-6`}
+      className={`${style.BgContact} relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-24`}
     >
       <div className="hidden lg:block">
         <Image src={BgContact} alt="" />

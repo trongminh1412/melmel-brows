@@ -390,3 +390,12 @@ $appHeaderHeight: 6.4rem;
 .ant-image-error {
   width: 100% !important;
 }
+.ant-table-thead {
+  .ant-table-cell {
+    background-color: #94774a;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+

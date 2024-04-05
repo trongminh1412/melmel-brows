@@ -48,7 +48,7 @@ export const faqPage1 = [
 const FaqsComponent = () => {
   return (
     <div>
-      <section className="bg-[url(/background3.png)] bg-no-repeat">
+      <section className="bg-[url(/background3.png)] bg-no-repeat px-4 py-24">
         <TitleComponent title1="Câu hỏi thường gặp"/>
         <div className="mx-auto w-[50%] mt-[10rem] bg-white p-12 rounded-3xl border-[1px]">
           {faqPage1.map((item,) => {
