@@ -4,6 +4,7 @@ import { BlockList } from '@/components/BlockList/blockList';
 import { BlockListImage } from '@/components/BlockListImage/blockListImage';
 import { Contact } from '@/components/Contact/contact';
 import { Education } from '@/components/Education/education';
+import HomePage1 from '@/components/SectionPage1/HomePage';
 import { Footer } from '@/components/footer/footer';
 import Navbar from '@/components/navigation/Navbar';
 import { Solution } from '@/components/Solution/solution';
@@ -28,6 +29,7 @@ const Base = () => (
     <BlockList data={DataBlockList1} />
     <BlockListImage data={DataBlockImage1} />
     <Contact data={DataContact3} />
+    <HomePage1 />
     <Footer />
   </div>
 );

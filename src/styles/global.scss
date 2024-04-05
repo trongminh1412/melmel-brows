@@ -7,3 +7,9 @@
 
 @import '../styles/scss/index.scss';
 
+.ant-collapse.ant-collapse-borderless .ant-collapse-item{
+    border-bottom: 1px solid #E1E1E0!important;
+}
+.ant-tabs-nav::before{
+   
+}
