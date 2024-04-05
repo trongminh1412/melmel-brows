@@ -6,6 +6,7 @@ import EmailIcon from '@/public/assets/images/footer/Message.svg';
 import LogoFooter from '@/public/assets/images/footer/logoFooter.svg';
 import { Col, Row } from 'antd';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => (
   <>
@@ -14,7 +15,9 @@ const Footer = () => (
       <Row gutter={[20, 20]}>
         <Col xs={24} sm={24} md={24} lg={5}>
           <div className='md:text-center md:justify-center md:flex sm:flex sm:justify-center'>
-            <Image src={LogoFooter} alt="logo-footer" />
+           <Link href={"/"}>
+           <Image src={LogoFooter} alt="logo-footer" />
+           </Link>
           </div>
         </Col>
         <Col xs={24} sm={24} md={24} lg={5}>

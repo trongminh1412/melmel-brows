@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
       <header className="sticky top-0 z-[100] border-gray-200 bg-white">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <a
-            href="#"
+            href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <Image
