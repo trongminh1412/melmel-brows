@@ -20,6 +20,8 @@ import Navbar from "../navigation/Navbar";
 import bg4 from "@/public/assets/images/edu/background4.png"
 import { motion } from "framer-motion";
 import bgmb from "@/public/assets/images/edu/bgmb.png"
+import { BlockList} from "../BlockList/blockList";
+import { DataBlockList2, DataTable } from "@/utils/config/blockList";
 export const blogEdu = [
   {
     id: 1,
@@ -648,6 +650,10 @@ const HomePage = () => {
           </Carousel>
         </div>
       </section>
+      <div>
+    <BlockList data={DataBlockList2} dataTable={DataTable} />
+
+      </div>
       <div>
         <FeedbackComponents />
       </div>
