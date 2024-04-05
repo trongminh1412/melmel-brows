@@ -5,14 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build-stats": "cross-env ANALYZE=true npm run build",
-    "build-prod": "run-s clean build",
-    "clean": "rimraf .next .swc out",
-    "lint": "next lint",
-    "lint:es": "eslint . --ext ts,tsx,js",
-    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
-    "check-types": "tsc --noEmit --pretty",
-    "prettier": "prettier --write ."
+    "lint": "next lint"
   },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
