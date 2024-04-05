@@ -12,25 +12,25 @@ import { Footer } from '@/components/footer/footer';
 import Navbar from '@/components/navigation/Navbar';
 import { Meta } from '@/layout/Meta';
 import { AppConfig } from '@/utils/AppConfig';
-import {  DataAttractiveness2 } from '@/utils/config/attractiven';
-import { DataBanner4 } from '@/utils/config/banner';
+import { DataAttractiveness1 } from '@/utils/config/attractiven';
+import { DataBanner3 } from '@/utils/config/banner';
 import { DataBlockImage1 } from '@/utils/config/blockImage';
-import {  DataBlockList2 } from '@/utils/config/blockList';
+import { DataBlockList1 } from '@/utils/config/blockList';
 import { DataContact3 } from '@/utils/config/contact';
-import {  DataEducation2 } from '@/utils/config/education';
-import {  DataSolution2 } from '@/utils/config/solution';
-import {  DataTab4 } from '@/utils/config/tab';
+import { DataEducation1 } from '@/utils/config/education';
+import { DataSolution1 } from '@/utils/config/solution';
+import { DataTab3 } from '@/utils/config/tab';
 
-const PageEducation2 = () => (
+const PageCourse = () => (
   <div className="text-gray-600 antialiased">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Navbar />
-    <Banner data={DataBanner4} />
-    <Solution data={DataSolution2} />
-    <TabComponent data={DataTab4}/>
-    <Education data={DataEducation2} />
-    <Attractiveness data={DataAttractiveness2} />
-    <BlockList data={DataBlockList2} dataTable={null} />
+    <Banner data={DataBanner3} />
+    <Solution data={DataSolution1} />
+    <TabComponent data={DataTab3}/>
+    <Education data={DataEducation1} />
+    <Attractiveness data={DataAttractiveness1} />
+    <BlockList data={DataBlockList1} dataTable={null} />
     <BlockListImage data={DataBlockImage1} />
     <FeedbackComponents />
     <Contact data={DataContact3} />
@@ -39,4 +39,4 @@ const PageEducation2 = () => (
   </div>
 );
 
-export { PageEducation2 };
+export { PageCourse };

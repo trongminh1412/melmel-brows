@@ -1,4 +1,5 @@
-import HomePage from '@/components/SectionPage1/HomePage';
+import { HomePage } from "@/templates/HomePage";
+
 const Index = () =>  <HomePage />;
 
 export default Index;

@@ -1,4 +1,4 @@
-import { PageEducation } from '../templates/PageEducation';
+import { PageEducation } from '@/templates/PageEducation';
 
 const Index = () => <PageEducation />;
 
