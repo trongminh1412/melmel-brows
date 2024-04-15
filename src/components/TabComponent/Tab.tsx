@@ -26,7 +26,7 @@ type Props = {
   }[];
 };
 const TabComponent = (props: Props) => {
-  // const [thumbsSwiper, setThumbsSwiper] = useState<any>();
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>();
   const [key, setKey] = useState('0');
 
   return (
@@ -87,6 +87,9 @@ const TabComponent = (props: Props) => {
                       navigation={false}
                       modules={[FreeMode, Navigation, Thumbs]}
                       className="mySwiper2"
+                    thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
+                    onSwiper={setThumbsSwiper}
+
                     >
                       <SwiperSlide>
                         <div className="w-full">

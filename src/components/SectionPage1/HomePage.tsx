@@ -24,13 +24,14 @@ import { DataContact1 } from '@/utils/config/contact';
 import { DataTab1 } from '@/utils/config/tab';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide,SwiperClass } from 'swiper/react';
 
 export const contentPage1 = [
   {
@@ -133,6 +134,8 @@ export const customerPage1 = [
 ];
 
 const HomePage1 = () => {
+
+const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass>()
   return (
     <div className="overflow-hidden">
       <section>
@@ -210,6 +213,8 @@ const HomePage1 = () => {
             <div>
               <Swiper
                 pagination={true}
+                thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
+                onSwiper={setThumbsSwiper}
                 loop
                 modules={[Pagination]}
                 className="mySwiper"
