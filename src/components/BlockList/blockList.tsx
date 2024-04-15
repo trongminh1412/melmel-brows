@@ -85,7 +85,7 @@ const BlockList = (props: Props) => (
           dataSource={props.dataTable?.dataSource}
           pagination={false}
           bordered
-          style={{ width: '100%' }}
+          style={{ width: '100%', overflowX:"auto" }}
           rowClassName="text-center text-[#423f3a] font-normal"
         />
       </div>

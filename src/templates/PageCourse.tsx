@@ -22,7 +22,7 @@ import { DataSolution1 } from '@/utils/config/solution';
 import { DataTab3 } from '@/utils/config/tab';
 
 const PageCourse = () => (
-  <div className="text-gray-600 antialiased">
+  <div className="text-gray-600 antialiased overflow-hidden">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Navbar />
     <Banner data={DataBanner3} />

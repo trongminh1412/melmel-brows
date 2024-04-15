@@ -22,7 +22,7 @@ import {  DataSolution2 } from '@/utils/config/solution';
 import {  DataTab4 } from '@/utils/config/tab';
 
 const PageSkin = () => (
-  <div className="text-gray-600 antialiased">
+  <div className="text-gray-600 antialiased overflow-hidden">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Navbar />
     <Banner data={DataBanner4} />

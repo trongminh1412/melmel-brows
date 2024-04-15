@@ -108,7 +108,7 @@ export const opening = [
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar />
       <section >
         <div className="object-cover aspect-auto">

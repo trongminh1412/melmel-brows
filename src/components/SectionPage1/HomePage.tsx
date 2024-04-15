@@ -132,7 +132,7 @@ export const customerPage1 = [
 
 const HomePage1 = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <section>
         <Navbar />
       </section>
