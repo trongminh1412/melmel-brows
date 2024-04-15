@@ -22,5 +22,9 @@
   .block {
     height: 40rem;
     padding-top: 10rem;
+    @media (max-width: 475px) {
+      height: 30rem;
+      padding-top: 5rem;
+    }
   }
 }

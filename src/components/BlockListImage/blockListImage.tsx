@@ -1,11 +1,11 @@
 /* eslint-disable no-nested-ternary */
-/* eslint-disable react/jsx-no-duplicate-props */
-import { Col, Row } from 'antd';
-import Image from 'next/image';
 
-import style from './blockListImage.module.scss';
+/* eslint-disable react/jsx-no-duplicate-props */
 import TitleComponent from '../SectionPage1/Title/Title';
+import style from './blockListImage.module.scss';
+import { Col, Row } from 'antd';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type Props = {
   data: {
@@ -18,10 +18,10 @@ const BlockListImage = (props: Props) => (
   <div className="section rounded-xl">
     <div
       className={
-        'relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-center px-4 py-24'
+        'relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-center px-4 py-24 '
       }
     >
-      <TitleComponent title2="NHỮNG HÌNH ẢNH HOẠT ĐỘNG TẠI MELMEL BROWS"/>
+      <TitleComponent title2="NHỮNG HÌNH ẢNH HOẠT ĐỘNG TẠI MELMEL BROWS" />
 
       <div className="mb-12 flex justify-center text-[20px] font-[400] leading-[30px] text-[#423F3A]">
         <span className="text-center"> {props.data.title}</span>
@@ -43,24 +43,24 @@ const BlockListImage = (props: Props) => (
               }
             >
               <motion.div
-               initial="hide"
-               whileInView="show"
-               viewport={{ once: true }}
-               exit="hide"
-               variants={{
-                 hide: {
-                   opacity: 0,
-                   scaleX: -2,
-                 },
-                 show: {
-                   opacity: 1,
-                   scaleX: 1,
-                   transition: {
-                     duration: 0.7,
-                     bounce: 0.4,
-                   },
-                 },
-               }}  
+                initial="hide"
+                whileInView="show"
+                viewport={{ once: true }}
+                exit="hide"
+                variants={{
+                  hide: {
+                    opacity: 0,
+                    scaleX: -2,
+                  },
+                  show: {
+                    opacity: 1,
+                    scaleX: 1,
+                    transition: {
+                      duration: 0.7,
+                      bounce: 0.4,
+                    },
+                  },
+                }}
               >
                 <Image src={item.image} alt="picture" className="w-full" />
               </motion.div>

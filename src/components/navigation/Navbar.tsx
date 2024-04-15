@@ -1,11 +1,9 @@
+import style from './Navbar.module.scss';
 import Logo from '@/public/assets/images/header/logo.svg';
 import menu from '@/utils/config/menu.json';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect,useState } from 'react';
-
-import style from './Navbar.module.scss';
-
+import React, { useEffect, useState } from 'react';
 
 const Navbar: React.FC = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -25,7 +23,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header className="sticky top-0 z-[100] border-gray-200 bg-white">
-        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 475px:h-[72px] 475px:px-[2rem]">
           <a
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"

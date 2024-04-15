@@ -1,66 +1,67 @@
-import banner from "@/public/assets/images/edu/banner.png";
-import card1 from "@/public/assets/images/edu/card1.png";
-import card2 from "@/public/assets/images/edu/card2.png";
-import card3 from "@/public/assets/images/edu/card3.png";
-import arrw from "@/public/assets/images/icon/arrow-white.png";
-import arrowRight from "@/public/assets/images/icon/arwRight.png";
-import arrowLeft from "@/public/assets/images/icon/arwLeft.png";
-import book from "@/public/assets/images/icon/book.png";
-import time from "@/public/assets/images/icon/clock.png";
-import grad from "@/public/assets/images/icon/grad.png";
-import poly from "@/public/assets/images/icon/poly.png";
-import { Carousel } from "antd";
-import Image from "next/image";
-import Discount from "../SectionPage1/Discount/Discount";
-import FaqsComponent from "../SectionPage1/Faqs/FaqsComponent";
-import FeedbackComponents from "../SectionPage1/Feedback/FeedbackComponents";
-import TitleComponent from "../SectionPage1/Title/Title";
-import { Footer } from "../footer/footer";
-import Navbar from "../navigation/Navbar";
-import bg4 from "@/public/assets/images/edu/background4.png"
-import { motion } from "framer-motion";
-import bgmb from "@/public/assets/images/edu/bgmb.png"
-import { BlockList} from "../BlockList/blockList";
-import { DataBlockList2, DataTable } from "@/utils/config/blockList";
+import { BlockList } from '../BlockList/blockList';
+import Discount from '../SectionPage1/Discount/Discount';
+import FaqsComponent from '../SectionPage1/Faqs/FaqsComponent';
+import FeedbackComponents from '../SectionPage1/Feedback/FeedbackComponents';
+import TitleComponent from '../SectionPage1/Title/Title';
+import { Footer } from '../footer/footer';
+import Navbar from '../navigation/Navbar';
+import bg4 from '@/public/assets/images/edu/background4.png';
+import banner from '@/public/assets/images/edu/banner.png';
+import bgmb from '@/public/assets/images/edu/bgmb.png';
+import card1 from '@/public/assets/images/edu/card1.png';
+import card2 from '@/public/assets/images/edu/card2.png';
+import card3 from '@/public/assets/images/edu/card3.png';
+import arrw from '@/public/assets/images/icon/arrow-white.png';
+import arrowLeft from '@/public/assets/images/icon/arwLeft.png';
+import arrowRight from '@/public/assets/images/icon/arwRight.png';
+import book from '@/public/assets/images/icon/book.png';
+import time from '@/public/assets/images/icon/clock.png';
+import grad from '@/public/assets/images/icon/grad.png';
+import poly from '@/public/assets/images/icon/poly.png';
+import { DataBlockList2, DataTable } from '@/utils/config/blockList';
+import { Carousel } from 'antd';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+
 export const blogEdu = [
   {
     id: 1,
-    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
-    time: "15 buổi",
-    tech: "Phun xăm chuyên sâu",
-    gradi: "M-REMOVAL MelMel Brows",
+    title: 'Khóa tổng hợp nền tảng phun xăm thẩm mỹ',
+    time: '15 buổi',
+    tech: 'Phun xăm chuyên sâu',
+    gradi: 'M-REMOVAL MelMel Brows',
     cover: card1,
   },
   {
     id: 2,
-    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
-    time: "15 buổi",
-    tech: "Phun xăm chuyên sâu",
-    gradi: "M-REMOVAL MelMel Brows",
+    title: 'Khóa tổng hợp nền tảng phun xăm thẩm mỹ',
+    time: '15 buổi',
+    tech: 'Phun xăm chuyên sâu',
+    gradi: 'M-REMOVAL MelMel Brows',
     cover: card2,
   },
   {
     id: 3,
-    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
-    time: "15 buổi",
-    tech: "Phun xăm chuyên sâu",
-    gradi: "M-REMOVAL MelMel Brows",
+    title: 'Khóa tổng hợp nền tảng phun xăm thẩm mỹ',
+    time: '15 buổi',
+    tech: 'Phun xăm chuyên sâu',
+    gradi: 'M-REMOVAL MelMel Brows',
     cover: card1,
   },
   {
     id: 4,
-    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
-    time: "15 buổi",
-    tech: "Phun xăm chuyên sâu",
-    gradi: "M-REMOVAL MelMel Brows",
+    title: 'Khóa tổng hợp nền tảng phun xăm thẩm mỹ',
+    time: '15 buổi',
+    tech: 'Phun xăm chuyên sâu',
+    gradi: 'M-REMOVAL MelMel Brows',
     cover: card1,
   },
   {
     id: 5,
-    title: "Khóa tổng hợp nền tảng phun xăm thẩm mỹ",
-    time: "15 buổi",
-    tech: "Phun xăm chuyên sâu",
-    gradi: "M-REMOVAL MelMel Brows",
+    title: 'Khóa tổng hợp nền tảng phun xăm thẩm mỹ',
+    time: '15 buổi',
+    tech: 'Phun xăm chuyên sâu',
+    gradi: 'M-REMOVAL MelMel Brows',
     cover: card1,
   },
 ];
@@ -68,40 +69,40 @@ export const opening = [
   [
     {
       id: 1,
-      title: "Học tổng hợp các Nền tảng tất cả kỹ thuật Mày, Môi, Mí",
+      title: 'Học tổng hợp các Nền tảng tất cả kỹ thuật Mày, Môi, Mí',
     },
     {
       id: 2,
-      title: "Học Coaching cầm tay chỉ việc 1 kèm 1 với Master",
+      title: 'Học Coaching cầm tay chỉ việc 1 kèm 1 với Master',
     },
     {
       id: 3,
       title:
-        "Học theo nhóm 10 Học viên/ Khóa từ Cơ bản đến Nâng cao từng Kỹ thuật",
+        'Học theo nhóm 10 Học viên/ Khóa từ Cơ bản đến Nâng cao từng Kỹ thuật',
     },
     {
       id: 4,
       title:
-        "Học Coaching cầm tay chỉ việc 1 kèm 1 với Grand Master Lư Yến Thanh",
+        'Học Coaching cầm tay chỉ việc 1 kèm 1 với Grand Master Lư Yến Thanh',
     },
   ],
   [
     {
       id: 5,
-      title: "Tương tác trực tiếp cùng chuyên gia",
+      title: 'Tương tác trực tiếp cùng chuyên gia',
     },
     {
       id: 6,
-      title: "Học không giới hạn số khoá học và kỹ năng",
+      title: 'Học không giới hạn số khoá học và kỹ năng',
     },
     {
       id: 7,
-      title: "Tham gia cộng đồng phát triển và kết nối chuyên gia",
+      title: 'Tham gia cộng đồng phát triển và kết nối chuyên gia',
     },
     {
       id: 8,
       title:
-        "Giảng viên là các chuyên gia thực chiến có bằng cấp và đạt giải thưởng trong các Sự kiện danh giá trong nghành Phun xăm thẩm mỹ",
+        'Giảng viên là các chuyên gia thực chiến có bằng cấp và đạt giải thưởng trong các Sự kiện danh giá trong nghành Phun xăm thẩm mỹ',
     },
   ],
 ];
@@ -110,29 +111,32 @@ const HomePage = () => {
   return (
     <div className="overflow-hidden">
       <Navbar />
-      <section >
+      <section>
         <div className="object-cover aspect-auto">
           <Image src={banner} alt="" />
         </div>
       </section>
-      <motion.section className="relative overflow-hidden" initial="hide"
-                whileInView="show"
-                viewport={{ once: true }}
-                exit="hide"
-                variants={{
-                  hide: {
-                    opacity: 0,
-                    y: 100,
-                  },
-                  show: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 1.2,
-                      bounce: 0.4,
-                    },
-                  },
-                }}>
+      <motion.section
+        className="relative overflow-hidden"
+        initial="hide"
+        whileInView="show"
+        viewport={{ once: true }}
+        exit="hide"
+        variants={{
+          hide: {
+            opacity: 0,
+            y: 100,
+          },
+          show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1.2,
+              bounce: 0.4,
+            },
+          },
+        }}
+      >
         <div className="475px:hidden">
           <Image src={bg4} alt="" />
         </div>
@@ -141,9 +145,14 @@ const HomePage = () => {
         </div>
         <div className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem] absolute top-[20%] left-[50%] translate-x-[-50%]">
           <h2 className="text-center text-32px font-bold text-brown-100 mb-4 1280:text-24px 1024px:text-18px">
-          NƠI KIẾN TẠO SỰ NGHIỆP PHUN XĂM THẨM MỸ
+            NƠI KIẾN TẠO SỰ NGHIỆP PHUN XĂM THẨM MỸ
           </h2>
-          <p className="text-center text-20px text-dark-100 1024px:text-14px">MelMel Brows Academy thành lập từ 2016 bởi Grand Master Lư Yến Thanh đã trở thành một địa chỉ đáng tin cậy đào tạo và dịch vụ phun xăm thẩm mỹ, chủ yếu tập trung vào những đường nét trên gương mặt là Mày – Môi – Mí</p>
+          <p className="text-center text-20px text-dark-100 1024px:text-14px">
+            MelMel Brows Academy thành lập từ 2016 bởi Grand Master Lư Yến Thanh
+            đã trở thành một địa chỉ đáng tin cậy đào tạo và dịch vụ phun xăm
+            thẩm mỹ, chủ yếu tập trung vào những đường nét trên gương mặt là Mày
+            – Môi – Mí
+          </p>
         </div>
       </motion.section>
       <section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem]">
@@ -176,7 +185,7 @@ const HomePage = () => {
               settings: {
                 slidesToShow: 1,
                 centerMode: true,
-                centerPadding: "40"
+                centerPadding: '40',
               },
             },
           ]}
@@ -218,13 +227,13 @@ const HomePage = () => {
                   <div className="flex items-center gap-4 mb-6">
                     <Image src={book} alt="" />
                     <p className="text-16px text-gray-1100 1024px:text-14px">
-                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{' '}
                     </p>
                   </div>
                   <div className="flex items-center gap-4 mb-8">
                     <Image src={grad} alt="" />
                     <p className="text-16px text-gray-1100 1024px:text-14px">
-                      Bằng cấp: <strong>{item.gradi}</strong>{" "}
+                      Bằng cấp: <strong>{item.gradi}</strong>{' '}
                     </p>
                   </div>
                   <div>
@@ -262,7 +271,7 @@ const HomePage = () => {
               settings: {
                 slidesToShow: 1,
                 centerMode: true,
-                centerPadding: "40"
+                centerPadding: '40',
               },
             },
           ]}
@@ -291,7 +300,7 @@ const HomePage = () => {
                   <div className="flex items-center gap-4 mb-6">
                     <Image src={book} alt="" />
                     <p className="text-16px text-gray-1100 1024px:text-14px">
-                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{' '}
                     </p>
                   </div>
                 </div>
@@ -324,7 +333,7 @@ const HomePage = () => {
               settings: {
                 slidesToShow: 1,
                 centerMode: true,
-                centerPadding: "40"
+                centerPadding: '40',
               },
             },
           ]}
@@ -353,7 +362,7 @@ const HomePage = () => {
                   <div className="flex items-center gap-4 mb-6">
                     <Image src={book} alt="" />
                     <p className="text-16px text-gray-1100 1024px:text-14px">
-                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{' '}
                     </p>
                   </div>
                 </div>
@@ -386,7 +395,7 @@ const HomePage = () => {
               settings: {
                 slidesToShow: 1,
                 centerMode: true,
-                centerPadding: "40"
+                centerPadding: '40',
               },
             },
           ]}
@@ -415,7 +424,7 @@ const HomePage = () => {
                   <div className="flex items-center gap-4 mb-6">
                     <Image src={book} alt="" />
                     <p className="text-16px text-gray-1100 1024px:text-14px">
-                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{' '}
                     </p>
                   </div>
                 </div>
@@ -448,7 +457,7 @@ const HomePage = () => {
               settings: {
                 slidesToShow: 1,
                 centerMode: true,
-                centerPadding: "40"
+                centerPadding: '40',
               },
             },
           ]}
@@ -477,7 +486,7 @@ const HomePage = () => {
                   <div className="flex items-center gap-4 mb-6">
                     <Image src={book} alt="" />
                     <p className="text-16px text-gray-1100 1024px:text-14px">
-                      Kỹ thuật dạy: <strong>{item.tech}</strong>{" "}
+                      Kỹ thuật dạy: <strong>{item.tech}</strong>{' '}
                     </p>
                   </div>
                 </div>
@@ -488,17 +497,16 @@ const HomePage = () => {
       </section>
 
       <section className="1280:px-[4rem] w-full mx-auto mb-[8rem] max-w-screen-xl  1024px:mb-[3rem]">
-      <div>
-            <TitleComponent title1="ĐỘI NGŨ GIẢNG VIÊN" />
-            <p className="text-center text-20px text-dark-400 mb-[8rem]">
-              MelMel Brows tự hào là trung tâm đào tạo có chất lượng đào tạo
-              nghề Phun xăm Thẩm mỹ chất lượng nhất hiện nay sở hữu đội ngũ
-              Giảng viên có “tâm” và “tầm” trong ngành với hơn 16 năm kinh
-              nghiệm trong giảng dạy và đào tạo.
-            </p>
-          </div>
+        <div>
+          <TitleComponent title1="ĐỘI NGŨ GIẢNG VIÊN" />
+          <p className="text-center text-20px text-dark-400 mb-[8rem]">
+            MelMel Brows tự hào là trung tâm đào tạo có chất lượng đào tạo nghề
+            Phun xăm Thẩm mỹ chất lượng nhất hiện nay sở hữu đội ngũ Giảng viên
+            có “tâm” và “tầm” trong ngành với hơn 16 năm kinh nghiệm trong giảng
+            dạy và đào tạo.
+          </p>
+        </div>
         <div className="w-full mx-auto mb-[8rem] max-w-screen-xl 475px:hidden">
-          
           <div className="flex justify-between gap-4">
             <div className="relative overflow-hidden h-full">
               <div>
@@ -651,8 +659,7 @@ const HomePage = () => {
         </div>
       </section>
       <div>
-    <BlockList data={DataBlockList2} dataTable={DataTable} />
-
+        <BlockList data={DataBlockList2} dataTable={DataTable} />
       </div>
       <div>
         <FeedbackComponents />

@@ -35,9 +35,8 @@ type Props={
 
 const TabComponent = (props:Props) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>();
-  const [key, setKey] = useState("1")
-  console.log(key);
-  
+  const [key, setKey] = useState('1');
+
   return (
     <div>
       <div className="card-container">
@@ -80,63 +79,69 @@ const TabComponent = (props:Props) => {
                       bounce: 0.4,
                     },
                   },
-                }} >
-                <Swiper
-                  loop={true}
-                  spaceBetween={10}
-                  navigation={false}
-                  thumbs={{ swiper: thumbsSwiper }}
-                  modules={[FreeMode, Navigation, Thumbs]}
-                  className="mySwiper2"
-                >
-                  <SwiperSlide>
-                    <div className="w-full">
-                      <Image src={slide1} alt="" className="w-full" />
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="w-full">
-                      <Image src={slide1} alt="" />
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="w-full">
-                      <Image src={slide1} alt="" />
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="w-full">
-                      <Image src={slide1} alt="" />
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-
-                <Swiper
-                  onSwiper={setThumbsSwiper}
-                  loop={true}
-                  spaceBetween={10}
-                  slidesPerView={4}
-                  freeMode={true}
-                  watchSlidesProgress={true}
-                  modules={[FreeMode, Navigation, Thumbs]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide>
-                    <Image src={slide2} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image src={slide2} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image src={slide3} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image src={slide4} alt="" />
-                  </SwiperSlide>
-                </Swiper>
+                }}
+              >
+                <div>
+                  <Swiper
+                    loop={true}
+                    spaceBetween={10}
+                    navigation={false}
+                    thumbs={{ swiper: thumbsSwiper }}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    className="mySwiper2"
+                  >
+                    <SwiperSlide>
+                      <div className="w-full">
+                        <Image src={slide1} alt="" className="w-full" />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="w-full">
+                        <Image src={slide1} alt="" />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="w-full">
+                        <Image src={slide1} alt="" />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="w-full">
+                        <Image src={slide1} alt="" />
+                      </div>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+                <div>
+                  <Swiper
+                    onSwiper={setThumbsSwiper}
+                    loop={true}
+                    spaceBetween={10}
+                    slidesPerView={4}
+                    freeMode={true}
+                    watchSlidesProgress={true}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    className="mySwiper"
+                  >
+                    <SwiperSlide>
+                      <Image src={slide2} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <Image src={slide2} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <Image src={slide3} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <Image src={slide4} alt="" />
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
               </motion.div>
 
-              <motion.div className="w-[50%] 475px:w-full " initial="hide"
+              <motion.div
+                className="w-[50%] 475px:w-full "
+                initial="hide"
                 whileInView="show"
                 viewport={{ once: true }}
                 exit="hide"
@@ -153,7 +158,8 @@ const TabComponent = (props:Props) => {
                       bounce: 0.4,
                     },
                   },
-                }}>
+                }}
+              >
                 <p className="text-16px text-dark-300 font-normal tracking-wide mb-2">
                   {item.subLabel}
                 </p>
