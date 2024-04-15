@@ -1,17 +1,17 @@
-import { Col, Input, Row, Select } from "antd";
-import Image from "next/image";
+import style from './contact.module.scss';
+import BgContact from '@/public/assets/images/body/bg-contact.png';
+import product_ic from '@/public/assets/images/body/product_ic.svg';
+import profile_ic from '@/public/assets/images/body/profile_ic.svg';
+import rec from '@/public/assets/images/icon/rec.png';
+import { Col, Input, Row, Select } from 'antd';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-import BgContact from "@/public/assets/images/body/bg-contact.png";
-import product_ic from "@/public/assets/images/body/product_ic.svg";
-import profile_ic from "@/public/assets/images/body/profile_ic.svg";
-import rec from "@/public/assets/images/icon/rec.png";
-import { motion } from "framer-motion";
-import style from "./contact.module.scss";
-const {TextArea} = Input
+const { TextArea } = Input;
 
 type Props = {
   dataContact1?: {
-    title: string
+    title: string;
     span_title: string;
     li: {
       title: string;
@@ -24,10 +24,9 @@ type Props = {
   } | null;
 };
 const Contact = (props: Props) => (
-  
-  <div className="section rounded-2xl  mb-[8rem] 1280:px-[4rem]">
+  <div className="section rounded-2xl  mb-[8rem] ">
     <div
-      className={`${style.BgContact} relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-24`}
+      className={`${style.BgContact} relative mx-auto flex max-w-screen-xl flex-wrap items-center justify-between  py-24 1280:px-[4rem] 475px:px-[2rem]`}
     >
       <div className="hidden lg:block">
         <Image src={BgContact} alt="" />
@@ -35,13 +34,19 @@ const Contact = (props: Props) => (
 
       <div className={`${style.form_content}`}>
         <Row className="items-center px-[4rem] 1024px:px-[2rem]">
-          { props.dataContact1 &&<Col xs={24} md={24} lg={12} >            
+          {props.dataContact1 && (
+            <Col xs={24} md={24} lg={12}>
               <div className="">
-                <div className={`${style.title} mb-3 text-center text-brown-300 text-7xl`}>
+                <div
+                  className={`${style.title} mb-3 text-center text-brown-300 text-7xl`}
+                >
                   {props.dataContact1?.title}
                 </div>
                 <div>
-                  <p className="text-20px font-bold text-dark-100 mb-4 1024px:text-16px">    {props.dataContact1?.span_title}</p>
+                  <p className="text-20px font-bold text-dark-100 mb-4 1024px:text-16px">
+                    {' '}
+                    {props.dataContact1?.span_title}
+                  </p>
                 </div>
                 {props.dataContact1.li.map((item, idx) => {
                   return (
@@ -49,13 +54,15 @@ const Contact = (props: Props) => (
                       <div>
                         <Image src={rec} alt="" />
                       </div>
-                      <p className="text-20px font-normal text-dark-100 1024px:text-16px">{item.title}</p>
+                      <p className="text-20px font-normal text-dark-100 1024px:text-16px">
+                        {item.title}
+                      </p>
                     </div>
                   );
                 })}
               </div>
-            
-          </Col>}
+            </Col>
+          )}
           {props.data && (
             <Col xs={24} md={24} lg={12}>
               <div className="p-5">
@@ -70,40 +77,40 @@ const Contact = (props: Props) => (
                 <span
                   className={style.subtitle}
                   dangerouslySetInnerHTML={{
-                    __html: props.data?.subTitle || "",
+                    __html: props.data?.subTitle || '',
                   }}
                 />
               </div>
             </Col>
           )}
 
-          <Col xs={24} md={24} lg={12} >
+          <Col xs={24} md={24} lg={12}>
             <motion.div
               className="rounded-[12px] border border-solid  bg-white p-[40px]"
               style={{
-                boxShadow: "0px 8px 35px 0px rgba(0, 0, 0, 0.08)",
+                boxShadow: '0px 8px 35px 0px rgba(0, 0, 0, 0.08)',
               }}
               initial="hide"
-                whileInView="show"
-                viewport={{ once: true }}
-                exit="hide"
-                variants={{
-                  hide: {
-                    opacity: 0,
-                    x: 300,
+              whileInView="show"
+              viewport={{ once: true }}
+              exit="hide"
+              variants={{
+                hide: {
+                  opacity: 0,
+                  x: 300,
+                },
+                show: {
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 0.8,
+                    bounce: 0.4,
                   },
-                  show: {
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                      duration: 0.8,
-                      bounce: 0.4,
-                    },
-                  },
-                }} 
+                },
+              }}
             >
               <div className={`${style.form_heading} text-center`}>
-               {props.data ? " Form Đăng ký" : "Form liên hệ online"}
+                {props.data ? ' Form Đăng ký' : 'Form liên hệ online'}
               </div>
               <Row gutter={[12, 12]}>
                 <Col xs={24} md={24} lg={12} className="mb-6">
@@ -142,29 +149,30 @@ const Contact = (props: Props) => (
                     className="input__text-md"
                   />
                 </Col>
-                {
-                  props.dataContact1 ? <>
-                  <Col xs={24} md={24} lg={24}>
-                  <div className="layout-form__label">
-                    Khóa học bạn quan tâm
-                  </div>
-                  <TextArea rows={3} placeholder="Nội dung liên hệ" />
-                </Col>
-                  </> : 
+                {props.dataContact1 ? (
                   <>
-                  <Col xs={24} md={24} lg={24}>
-                  <div className="layout-form__label">
-                    Khóa học bạn quan tâm
-                  </div>
-                  <Select
-                    placeholder="Khóa học bạn quan tâm"
-                    options={[]}
-                    className="input__select-md"
-                    style={{ width: "100%" }}
-                  />
-                </Col>
+                    <Col xs={24} md={24} lg={24}>
+                      <div className="layout-form__label">
+                        Khóa học bạn quan tâm
+                      </div>
+                      <TextArea rows={3} placeholder="Nội dung liên hệ" />
+                    </Col>
                   </>
-                }
+                ) : (
+                  <>
+                    <Col xs={24} md={24} lg={24}>
+                      <div className="layout-form__label">
+                        Khóa học bạn quan tâm
+                      </div>
+                      <Select
+                        placeholder="Khóa học bạn quan tâm"
+                        options={[]}
+                        className="input__select-md"
+                        style={{ width: '100%' }}
+                      />
+                    </Col>
+                  </>
+                )}
               </Row>
               <div className="mt-14 flex w-full  items-center justify-center text-center lg:block lg:w-auto">
                 <button
