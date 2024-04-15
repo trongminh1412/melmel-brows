@@ -11,7 +11,7 @@ const Faqs = (props: any) => {
 
   const { Panel } = Collapse;
   return (
-    <div className="bg-brown-400  ">
+    <div className="bg-brown-400" key={props.key}>
       <div >
         <Collapse
           bordered={false}

@@ -16,16 +16,17 @@ const FeedbackComponents = () => {
           {customerPage1.map((item, idx) => {
            
             return (
-            <Feedback
-                key={idx}
-                img={item.img}
-                rate={item.rate}
-                avatar={item.avatar}
-                customerName={item.customerName}
-                location={item.location}
-                quote={item.quote}
-                description={item.description}
-              />
+              <div className="bg-brown-400" key={idx}>
+              <Feedback               
+                  img={item.img}
+                  rate={item.rate}
+                  avatar={item.avatar}
+                  customerName={item.customerName}
+                  location={item.location}
+                  quote={item.quote}
+                  description={item.description}
+                />
+              </div>
             );
           })}
         </div>
@@ -78,8 +79,6 @@ const FeedbackComponents = () => {
                   </div>
                 </div>
               </SwiperSlide>
-            
-        
             )
           })}
           </Swiper>

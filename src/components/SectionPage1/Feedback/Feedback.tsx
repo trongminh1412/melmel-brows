@@ -1,13 +1,21 @@
 import Image from "next/image";
 // Import Swiper React components
 
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
-
-const Feedback = (props: any) => {
+type Props={
+    img:any
+     rate:any
+      avatar:any
+    customerName:string
+    location:string
+     quote:any
+      description:string
+}
+const Feedback = (props: Props) => {
   return (
-      <motion.div key={props.key} className="w-[32%] p-8 shadow-md rounded-[12px] bg-white mb-6" initial="hide"
+      <motion.div className="w-[32%] p-8 shadow-md rounded-[12px] bg-white mb-6" initial="hide"
       whileInView="show"
       viewport={{ once: true }}
       exit="hide"
@@ -50,9 +58,6 @@ const Feedback = (props: any) => {
           <p className="text-18px text-dark-200 font-normal 1024px:text-16px">{props.description}</p>
         </div>
        </div>
-        <div>
-        
-        </div>
       </motion.div>
   );
 };

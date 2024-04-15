@@ -39,7 +39,6 @@ const TabComponent = (props:Props) => {
             defaultActiveKey={key} 
             animated={true} 
             onChange={(val) => {
-              console.log(43,val)
               setKey(val)
             }}>
           {props.data.map((item,idx)=>{

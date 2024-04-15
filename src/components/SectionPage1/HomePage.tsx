@@ -20,16 +20,17 @@ import card3 from "@/public/assets/images/page1/card3.png";
 import card4 from "@/public/assets/images/page1/card4.png";
 import card5 from "@/public/assets/images/page1/card5.png";
 import card6 from "@/public/assets/images/page1/card6.png";
+import { DataBanner1 } from "@/utils/config/banner";
+import { DataContact1 } from "@/utils/config/contact";
+import { DataTab1 } from "@/utils/config/tab";
+import { motion } from "framer-motion";
+import { Banner } from "../Banner/banner";
+import { Contact } from "../Contact/contact";
+import Navbar from "../navigation/Navbar";
 import Discount from "./Discount/Discount";
 import FaqsComponent from "./Faqs/FaqsComponent";
 import FeedbackComponents from "./Feedback/FeedbackComponents";
 import TabComponent from "./TabComponent/Tab";
-import Navbar from "../navigation/Navbar";
-import { Banner } from "../Banner/banner";
-import { DataBanner1 } from "@/utils/config/banner";
-import { Contact } from "../Contact/contact";
-import { DataContact1 } from "@/utils/config/contact";
-import { motion } from "framer-motion";
 export const contentPage1 = [
   {
     img: rec,
@@ -151,7 +152,7 @@ const HomePage1 = () => {
       <section className="w-full mx-auto mb-[8rem] max-w-screen-xl 1280:px-[4rem]">
         <TitleComponent title1="Các Kĩ Thuật Phun Xăm" title2="" />
         <div>
-          <TabComponent />
+          <TabComponent data={DataTab1}/>
         </div>
       </section>
       <section className="w-full mx-auto mb-32 max-w-screen-xl 1280:px-[4rem]">
